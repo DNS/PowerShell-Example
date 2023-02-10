@@ -1,0 +1,51 @@
+
+# random integer between 0 and 99
+Get-Random -Maximum 100
+
+# random integer between -100 and 99
+Get-Random -Minimum -100 -Maximum 100
+
+# random floating point
+Get-Random -Minimum 10.7 -Maximum 20.93
+
+# random integer from an array
+1, 2, 3, 5, 8, 13 | Get-Random
+
+# Get several random integers from an array
+1, 2, 3, 5, 8, 13 | Get-Random -Count 3
+
+# Randomize an entire collection
+1, 2, 3, 5, 8, 13 | Get-Random -Shuffle
+
+Get a random non-numeric value
+"red", "yellow", "blue" | Get-Random
+
+# Commands with the default seed are pseudorandom
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+
+# Commands with the same seed are not random
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100 -SetSeed 23
+
+# SetSeed results in a repeatable series
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100 -SetSeed 23
+
+# Maximum seed is 2147483647
+[math]::Pow(2,32)/2 - 1
+Get-Random -SetSeed 2147483647
+
+------------------
+
+$random = New-Object System.Random
+$number = $random.Next(1, 101)
+Write-Output $number
+
+
+
+

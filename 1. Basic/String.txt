@@ -1,0 +1,36 @@
+
+# String assign
+$a = 'my string 1'
+$b = "my string 2"
+$c = 'my 
+string'
+
+# Block String (multi-line, no first & last new line)
+$text = @"
+This is (a) sample
+text, this is
+a (sample text)
+"@
+
+
+# String interpolation
+Write-Host "65: $([char] 65)"
+
+$b = 'bbb'
+Write-Host "a$($b)c"
+
+
+# Concatenation
+$a = 'abc' + 579 + 'xyz'
+$a += 'Hello'
+
+# Concatenation (Faster)
+$a = [System.Text.StringBuilder]::new()
+$a.Append('aaa') > $null
+$a.ToString()
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+
+function MyFunc([Type] $Param1, [Type] $Param2) {
+  # Instructions
+}
+
+MyFunc value1 value2
+
+#####################################
+
+function Verb-Noun
+{
+  param (
+    # Definition of static parameters
+  )
+  dynamicparam {
+    # Definition of dynamic parameters
+  }
+  begin {
+    # Set of instruction to run at the start of the pipeline
+  }
+  process {
+    # Main instruction sets, ran for each item in the pipeline
+  }
+  end {
+    # Set of instruction to run at the end of the pipeline
+  }
+}
+
+
+Verb-Noun -Param1 value1 -Param2 value2
+
+
+
+#####################################
+
+function hello ($name) {
+	'Your name is ' + $name
+}
+
+hello 'Obito Uchiha'
+
+
+function func_variable_length ($array) {
+	foreach ($i in $array) { $i }
+}
+
+func_variable_length 1, 2, 3
+##################################### 
+
+function TestFunc {
+  Param(
+[Parameter(Mandatory)]$a, 
+$b
+)
+  Write-Host($a $b)
+}
+
+
+

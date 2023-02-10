@@ -1,0 +1,15 @@
+
+'abc' > TEST1.TXT
+'xyz' | Set-Content TEST2.TXT
+
+123, 456 | foreach { $_ * 777 } | Write-Output
+123, 456 | foreach { $_ * 777 } > PIPE-OUTPUT.TXT
+
+Get-Content file1.txt, file2.txt > combined.txt
+Get-Content file1.txt, file2.txt | Set-Content combined.txt
+
+
+
+
+
+

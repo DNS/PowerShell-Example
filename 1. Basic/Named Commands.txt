@@ -1,0 +1,11 @@
+
+Windows PowerShell can execute four kinds of named commands:
+    cmdlets (.NET Framework programs designed to interact with PowerShell)
+    PowerShell scripts (files suffixed by .ps1)
+    PowerShell functions
+    Standalone executable programs
+
+
+
+
+

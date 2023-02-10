@@ -1,0 +1,36 @@
+
+
+# branching
+
+if () {
+
+} elseif () {
+
+} else {
+
+}
+
+
+Switch () {
+
+}
+
+
+
+
+--------------------
+
+# logical operator (case insensitive)
+
+-and
+-or
+-not
+-xor
+!
+
+-eq
+-ne
+-ge
+-gt
+-le
+-lt

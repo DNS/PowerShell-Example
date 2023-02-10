@@ -1,0 +1,14 @@
+# -InputObject
+
+# all at once
+1..5 | Write-Output
+
+# -InputObject work one-by-one
+1..5 | % { Write-Output -InputObject $_ }
+
+
+
+
+
+
+

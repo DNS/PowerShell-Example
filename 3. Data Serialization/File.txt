@@ -1,0 +1,25 @@
+# READ
+Get-Content .\test.txt
+Get-Content .\original1.txt, .\original2.txt
+Get-Content .\test.txt -Raw
+
+Get-Content .\test.txt -Encoding utf8
+Get-Content .\test.txt -Encoding utf8BOM
+Get-Content .\test.txt -Encoding utf8NoBOM
+
+# WRITE
+Set-Content -LiteralPath .\test.txt -Value 'zzzz'
+'Hello 123' > .\test.txt
+
+# APPEND
+Add-Content -LiteralPath .\test.txt -Value 'zzzz'
+'Hello 456' >> .\test.txt
+'Hello 789' >> .\test.txt
+
+Get-Content .\original.txt | Add-Content .\clone2.txt
+Get-Content .\original1.txt, .\original2.txt | Set-Content .\clone.txt
+
+
+
+
+

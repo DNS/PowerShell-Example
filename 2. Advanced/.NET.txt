@@ -1,0 +1,16 @@
+# .NET
+
+$random = [System.Random]::new()
+$number = $random.Next(1, 101)
+Write-Output $number
+
+$random = New-Object System.Random
+$number = $random.Next(1, 101)
+Write-Output $number
+
+--------------
+
+# COM
+
+$WshShell = New-Object -ComObject WScript.Shell
+$WshShell | Get-Member

@@ -1,0 +1,25 @@
+# ` to escape new line
+Write-Host 111 `
+222
+
+
+# ` Escape Sequences
+`0  null character
+`r  carriage return
+`n  newline
+`b  backspace
+`f  form feed
+`t  tab
+`v  vertical tab
+''  single quote		# doesn't expand variable
+""  double quote		# will expand variable
+'<any other character>  that character, taken literally.
+
+
+
+# ' to escape ' inside string ''
+Write-Host 'abc '' def'
+
+
+
+# \ escape for regex, split, join

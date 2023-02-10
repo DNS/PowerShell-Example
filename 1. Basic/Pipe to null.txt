@@ -1,0 +1,10 @@
+
+# standard powershell way
+dir | Out-Null
+
+# faster speed
+dir > $null
+
+
+
+

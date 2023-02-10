@@ -1,0 +1,19 @@
+[byte[]] $a = @(65,66,0xA2)
+
+$a = @(65,66)
+Set-Content -Path test.txt -Value $a -AsByteStream
+
+$a = Get-Content -Path 111.jpg -AsByteStream
+
+Get-Content test.txt -ReadCount 0 -AsByteStream | Write-Host
+
+Get-Content 111.jpg -ReadCount 0 -AsByteStream | Set-Content 222.jpg -AsByteStream
+
+
+-ReadCount value of 0 reads the entire file in a single 
+read operation. 
+The default ReadCount value, 1, reads one byte 
+in each read operation and converts each byte into a separate 
+object, which causes errors when you use the Set-Content cmdlet 
+to write the bytes to a file unless you use AsByteStream parameter.
+

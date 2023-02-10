@@ -1,0 +1,3 @@
+$Path -replace '\:|\"|\||\\|\/|\<|\>|\*', '_'
+
+$Path.Split([IO.Path]::GetInvalidFileNameChars()) -join '_'

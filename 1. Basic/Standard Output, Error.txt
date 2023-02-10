@@ -1,0 +1,47 @@
+﻿
+# STDOUT
+123
+'Hello World'
+Write-Output 'Hello World'
+Write-Host 'Hello World'
+
+Write-Output 'ダイスキ'
+
+Nothing is true, everything is permitted.
+Laa shay'a waqi'un mutlaq bale kouloun moumkin.
+لا شيء واقع مطلق بل كل ممكن
+
+
+[Console]::Write('Hello World')
+[Console]::Out.Write('Hello World')
+
+# Write-Output writes to the pipeline
+Write-Output 444 | foreach{ $_ + 555 }
+
+# Write-Host writes to the console itself, doesn't write to pipeline
+Write-Host 444 | foreach{ $_ + 555 }	# doesn't work !!!
+
+
+
+# STDERR
+Write Error 'This is error' -ErrorVariable var 2> $null
+[Console]::Error.Write('This is error')
+
+
+# 
+Write-Warning "hello"
+Write-Error "hello"
+Write-Output "hi"
+
+
+# Clear console screen
+Clear-Host	CLS, CLEAR
+
+# Suppressing return values
+[void] $a
+$null = $a
+$a | Out-Null
+$a > $null
+
+
+

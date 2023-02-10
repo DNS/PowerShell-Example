@@ -1,0 +1,5 @@
+[Ctrl]+L
+
+Clear-Host
+cls
+clear

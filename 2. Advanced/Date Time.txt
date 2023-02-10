@@ -1,0 +1,97 @@
+# get current time (formatted, .NET format specifier)
+Get-Date -Format 'dddd MM/dd/yyyy HH:mm:ss K'
+dddd		-> day
+d dd		-> day digit
+M MM MMM MMMM	-> month digit / month
+yy yyyy		-> year digit
+h hh H HH	-> hour
+m mm		-> minute
+s ss		-> second
+t tt		-> AM/PM designator
+K		-> Time zone offset from UTC
+f F		-> System formatted output
+t T		-> System time
+
+# get current UNIX time
+Get-Date -UFormat %s
+
+Get-Date -Date '01/01/1970'
+# Thursday, 1 January 1970 12:00:00 AM
+
+# convert UNIX time to PowerShell DateTime (system locale)
+Get-Date -UnixTime 1664607619
+
+# convert PowerShell DateTime (system locale) to UNIX time
+Get-Date -Date 'Thursday, 1 January 1970 7:00:00 AM' -UFormat %s
+# 0
+
+
+Get-Date -Date '1 January 2020 0:00:00 AM' -UFormat %s
+Get-Date -Date '31 December 2020 11:59:59 PM' -UFormat %s
+
+
+
+Get-Date -Date '1 January 2005 0:00:00 AM' -UFormat %s
+Get-Date -Date '31 December 2005 11:59:59 PM' -UFormat %s
+
+
+
+Get-Date -UFormat "%A %m/%d/%Y %R %Z"
+# Saturday 10/01/2022 16:45 +07
+
+
+Get-Date
+   [[-Date] <DateTime>]
+   [-Year <Int32>]
+   [-Month <Int32>]
+   [-Day <Int32>]
+   [-Hour <Int32>]
+   [-Minute <Int32>]
+   [-Second <Int32>]
+   [-Millisecond <Int32>]
+   [-AsUTC]
+   -UnixTimeSeconds <Int64>
+   -UFormat <String>
+
+
+
+# -UFormat <String>
+Format specifier 	Meaning 	Example
+%A 	Day of the week - full name 	Monday
+%a 	Day of the week - abbreviated name 	Mon
+%B 	Month name - full 	January
+%b 	Month name - abbreviated 	Jan
+%C 	Century 	20 for 2019
+%c 	Date and time - abbreviated 	Thu Jun 27 08:44:18 2019
+%D 	Date in mm/dd/yy format 	06/27/19
+%d 	Day of the month - 2 digits 	05
+%e 	Day of the month - preceded by a space if only a single digit 	<space>5
+%F 	Date in YYYY-mm-dd format, equal to %Y-%m-%d (the ISO 8601 date format) 	2019-06-27
+%G 	ISO week date year (year containing Thursday of the week) 	
+%g 	Same as 'G' - 2 digits 	
+%H 	Hour in 24-hour format 	17
+%h 	Same as 'b' 	
+%I 	Hour in 12-hour format 	05
+%j 	Day of the year 	1-366
+%k 	Same as 'H' 	
+%l 	Same as 'I' (Upper-case I) 	05
+%M 	Minutes 	35
+%m 	Month number 	06
+%n 	newline character 	
+%p 	AM or PM 	
+%R 	Time in 24-hour format -no seconds 	17:45
+%r 	Time in 12-hour format 	09:15:36 AM
+%S 	Seconds 	05
+%s 	Seconds elapsed since January 1, 1970 00:00:00 	1150451174
+%t 	Horizontal tab character 	
+%T 	Time in 24-hour format 	17:45:52
+%U 	Same as 'W' 	
+%u 	Numeric day of the week (1-7) 	Monday = 1, Sunday = 7
+%V 	Week of the year 	01-53
+%w 	Numeric day of the week (0-6) 	Sunday = 0, Saturday = 6
+%W 	Week of the year 	00-52
+%X 	Same as 'T' 	
+%x 	Date in standard format for locale 	06/27/19 for English-US
+%Y 	Year in 4-digit format 	2019
+%y 	Year in 2-digit format 	19
+%Z 	Time zone offset from Universal Time Coordinate (UTC) 	-07

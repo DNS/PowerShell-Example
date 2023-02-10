@@ -1,0 +1,28 @@
+
+# import certificate (with prompt)
+Import-PfxCertificate -FilePath D:\BIN\nginx-1.21.6\conf\cert.pfx -CertStoreLocation 'Cert:\CurrentUser\Root' -Confirm
+
+CurrentUser | LocalMachine
+
+------------
+
+# RUN AS ADMINISTRATOR
+
+# import certificate (without prompt)
+$cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("D:\BIN\nginx-1.21.6\conf\cert.pfx")
+$rootStore = Get-Item cert:\LocalMachine\Root
+$rootStore.Open("ReadWrite")
+$rootStore.Add($cert)
+$rootStore.Close()
+
+# Stop Firefox
+Get-Process | %{ if ($_.Name -match 'firefox') { Stop-Process $_.Id -Force} }
+
+# change firefox permission to load custom certificate. change: prefs.js
+Get-ChildItem -Path "C:\Users\$env:USERNAME\AppData\Roaming\Mozilla\Firefox\Profiles\*" -Include prefs.js -Recurse -Depth 1 | %{ Add-Content -LiteralPath $_ -Value 'user_pref("security.enterprise_roots.enabled", true);' }
+
+
+
+
+
+

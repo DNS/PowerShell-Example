@@ -1,0 +1,84 @@
+
+# case insensitive
+-and
+-or
+-not
+-xor
+!
+
+-eq
+-ne
+-ge
+-gt
+-le
+-lt
+
+-like
+-match
+-replace
+-split
+-join
+-contains
+-in
+-is
+-as
+
+-notmatch
+-notlike
+-notcontains
+-notin
+-isnot
+
+
+
+-band
+-bor
+-bnot
+-bxor
+
+# case sensitive
+-cand
+-cor
+-ceq
+
+
+# Redirection Operators
+>, >>, 2>, 2>>, and 2>&1
+
+Subexpression operator $( )
+
+Array subexpression operator @( )
+Array Comma operator ,
+Array Index operator [ ]
+
+
+
+Hash table literal syntax @{}
+
+Call operator &
+Background operator &
+Dot sourcing operator .
+
+Cast operator [ ]
+
+# Format operator -f
+"{0} {1,-10} {2:N}" -f 1,"hello",[math]::pi
+
+Pipeline operator |
+Pipeline chain operators && and ||
+
+Range operator ..
+
+Member-access operator .
+
+Static member operator ::
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+
+[math]::Pow(x,y)
+[math]::Sqrt(x,y)
+
+[math]::Exp(x)		# e^x
+[math]::E
+
+[math]::PI
+[math]::Tau
+
+[math]::BigMul(x,y)	# return Int64
+
+[math]::Abs(-5.6)
+[math]::Ceiling(5.4)
+[math]::Floor(5.4)
+[math]::Round(-5.641)
+
+
+###################
+Large integer, arbitrary-precision arithmetic
+
+$a = [bigint] 44444444444444444444444444444444444444444444
+$a
+
+[bigint]::Pow(2, 4094) * [bigint]::Pow(777, 1024)
+
+
+
+

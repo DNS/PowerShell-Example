@@ -1,0 +1,11 @@
+$a = Format-Hex -InputObject 0x1f40
+$a
+
+# Hexadecimal String to Integer
+[uint16] $b = '0x1f40'
+$b
+
+
+$a = [char] 65 + [char] 66
+$a
+

@@ -1,0 +1,8 @@
+Get-ChildItem -Recurse -Include *.txt
+
+Get-ChildItem -Recurse -Include '*.tar*' -Exclude '*.gz*'
+
+
+
+
+

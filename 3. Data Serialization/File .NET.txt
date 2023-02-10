@@ -1,0 +1,14 @@
+If ([System.IO.File]::Exists($Item)) {
+  Try {
+      $FileStream = [System.IO.File]::Open($Item,'Open','Write')
+
+      $FileStream.Close()
+      $FileStream.Dispose()
+
+      $IsLocked = $False
+  } Catch [System.UnauthorizedAccessException] {
+      $IsLocked = 'AccessDenied'
+  } Catch {
+      $IsLocked = $True
+  }
+}

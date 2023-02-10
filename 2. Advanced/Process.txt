@@ -1,0 +1,21 @@
+
+# show running process
+Get-Process
+(Get-Process).ProcessName
+(Get-Process).ProcessName | %{ if ($_ -imatch 'NOTEPAD') { Write-Host $_ 'is running' } }
+
+
+# start process
+notepad.exe arg1 arg2
+Start-Process notepad.exe [[-ArgumentList] <string[]>]
+
+# stop process
+Stop-Process -Name notepad
+
+# start process & wait until terminate
+Start-Process notepad.exe -Wait
+
+# start process - window
+Start-Process notepad.exe [-WindowStyle {Normal | Hidden | Minimized | Maximized}]
+
+

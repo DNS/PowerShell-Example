@@ -1,0 +1,15 @@
+
+# use & as callback function
+
+function aaa ($a) { return $a }
+
+function zzz ($callback) {
+    (&$callback(111)) + 777
+}
+
+
+zzz aaa
+
+
+
+

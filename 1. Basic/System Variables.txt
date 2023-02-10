@@ -1,0 +1,10 @@
+$env
+$PSVersionTable
+
+---------------
+
+$env:Path
+$env:USERNAME
+$env:APPDATA
+$env:COMPUTERNAME
+

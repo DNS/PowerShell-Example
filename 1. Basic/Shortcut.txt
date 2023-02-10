@@ -1,0 +1,11 @@
+
+Get-Alias
+Get-Alias ?
+
+|       pipe, passing output to the next command
+$_	passing output from pipe, same as $PSItem
+%       call method from pipe?
+% {}	same as ForEach-Object {}, foreach {}
+? {}	same as Where-Object, where {}
+
+

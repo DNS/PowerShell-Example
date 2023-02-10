@@ -1,0 +1,8 @@
+
+# compress include root directory
+Compress-Archive -Path dir1, dir2 -DestinationPath file.zip
+
+# compress exclude root directory
+Compress-Archive -Path dir1, dir2 -DestinationPath file.zip
+
+Expand-Archive -Path file.zip -DestinationPath .

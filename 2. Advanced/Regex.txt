@@ -1,0 +1,29 @@
+
+-Match		# case insensitive
+-IMatch		# case insensitive
+-CMatch		# case sensitive
+
+-NotMatch
+-INotMatch
+-CNotMatch
+
+$s -Match ''
+
+$s -Replace ''			# doesn't modify $s
+$s.Replace('text', 'pattern')	# modify $s
+$s.Replace('text', 'pattern', 'OrdinalIgnoreCase')
+
+$m = [regex]::Matches($text, $pattern)
+$m
+
+# capture match value
+$string | Select-String "(F\d\d)" -AllMatches  | % Matches | % Value
+
+# capture group
+$string | Select-String '(a)' -AllMatches | % Matches | % {$_.Groups[1].Value}
+
+
+
+PowerShell's -Match only returns first match. You have to use Select-String with -AllMatches parameter or [regex]::Matches
+
+

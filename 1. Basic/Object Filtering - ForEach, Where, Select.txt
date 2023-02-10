@@ -1,0 +1,39 @@
+# ForEach-Object or % (similar to foreach loops in other languages)
+Get-Process | ForEach-Object ProcessName
+Get-Process | % ProcessName
+Get-Process | % { if ($_.ProcessName-like 'svchost') { $_ } }
+
+1..10 | foreach { $_*100 }
+
+# run parallel
+1..10 | % -ThrottleLimit 20 -Parallel { sleep 2; $_ }
+
+----------------------
+
+# Where-Object or ? (similar to how SQL filter rows)
+Get-Process | Where-Object ProcessName -Like 'svchost'
+Get-Process | ? ProcessName -Like 'svchost'
+Get-Process | ? { $_.ProcessName -like 'svchost' }
+
+1..10 | where {$_ -le 5 }
+
+
+
+----------------------
+
+# Select-Object (similar to how SQL filter columns)
+Get-Process | Select-Object ProcessName, CPU
+
+# output first/last 2 lines
+$a = "AAA`nBBB`nCCC`nDDD"
+Set-Content test.txt -Value $a
+
+Get-Content test.txt | select -First 2
+Get-Content test.txt | select -Last 2
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+
+$a = 1..5
+
+
+for ($i=0; $i -lt $a.Length; $i++) { $a[$i] }
+
+foreach ($i in $a) { 'Counting ' + $i }
+
+# foreach{} same as %{} shortcut with pipe
+$a | foreach { 'Counting ' + $_ }
+$a | % { 'Counting ' + $_ }
+
+
+# continue & break
+foreach ($file in $files) {
+	Continue
+	Break
+}
+
+
+
+while ($val -ne 3) {
+    $val++
+    Write-Host $val
+}
+

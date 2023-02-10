@@ -1,0 +1,23 @@
+
+
+# Direct array initialization:
+[byte[]] $b = 1,2,3,4,5
+$b = [byte]1,2,3,4,5
+$b = @([byte]1,2,3,4,5)
+$b = [byte]1..5
+
+# Create a zero-initialized array
+$b = [System.Array]::CreateInstance([byte],5)
+$b = [byte[]]::new(5)        # Powershell v5+
+$b = New-Object byte[] 5
+$b = New-Object -TypeName byte[] -Args 5
+
+# And if you ever want an array of byte[] (2-D array)
+# 5 by 5
+[byte[,]] $b = [System.Array]::CreateInstance([byte],@(5,5)) # @() optional for 2D and 3D
+[byte[,]] $b = [byte[,]]::new(5,5)
+
+# Additionally:
+# 3-D
+[byte[,,]] $b = [byte[,,]]::new(5,5,5)
+[byte[,]] $b = [System.Array]::CreateInstance([byte],5,5,5)

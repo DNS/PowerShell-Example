@@ -1,0 +1,12 @@
+
+# STDIN
+Read-Host
+
+$a = Read-Host
+$a
+
+Read-Host -OutVariable b > $null
+$b
+
+
+

@@ -1,0 +1,4 @@
+ConvertTo-Json $a
+
+ConvertFrom-Json "{'a':111, 'b':222}"
+

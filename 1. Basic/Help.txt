@@ -1,0 +1,2 @@
+Get-Help	HELP
+Show-Command	SHCM

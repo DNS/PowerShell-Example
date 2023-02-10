@@ -1,0 +1,63 @@
+
+# Convert Array from/to CSV
+
+$s = @'
+"Number","Name"
+"1","John"
+"2","Jane"
+'@
+
+$s | ConvertFrom-Csv -Delimiter ','
+
+##################################
+
+Use [ordered] or [pscustomobject] to preserve column ordering.
+
+$h = @(
+    [ordered] @{Name = 'John'; Number = 1},
+    [ordered] @{Name = 'Jane'; Number = 2}
+)
+
+$h | ConvertTo-Csv -Delimiter ','
+
+##################################
+
+$h = @()
+$h += [ordered] @{Name = 'John'; Number = 1}
+$h += [ordered] @{Name = 'Jane'; Number = 2}
+
+$h | ConvertTo-Csv
+
+##################################
+
+$h = [System.Collections.ArrayList] @()
+$h.Add( [ordered] @{Name = 'John'; Number = 1} ) > $null
+$h.Add( [ordered] @{Name = 'Jane'; Number = 2} ) > $null
+
+$h | ConvertTo-Csv
+
+==============================
+==============================
+==============================
+
+# Write to CSV
+$s = @'
+"col1","col2","col3"
+"a2","b2","c2"
+"a1","b1","c1"
+'@
+
+$s | ConvertFrom-Csv -Delimiter ';' | Export-Csv -Path test.csv
+
+# Read from CSV
+Import-Csv -Path test.csv
+Import-Csv -Path test.csv -Delimiter ','
+
+
+
+
+
+
+
+
+

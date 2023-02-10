@@ -1,0 +1,102 @@
+
+$local:DemoVar = "hello"
+$DemoVar = "hello"
+
+$global:DemoVar = "hello"
+$script:DemoVar = "world"
+$private:DemoVar = "world"
+function global:DemoFunc {...}
+
+
+
+=====================
+
+$num1 = 777
+$num2 = 5.867
+$str1 = 'abc'
+$str2 = "xyz"
+$text = @"
+This is (a) sample
+text, this is
+a (sample text)
+"@
+
+
+=====================
+
+# Array Fixed Size
+[Array] -> [System.Array]
+$a = [Array] @(1,2,3)
+$a = @(1,2,3)
+$a = (1,2,3)
+$a = 1,2,3
+
+$a = @(
+'a'
+'b'
+'c')
+
+$a += 4,5,6
+
+$a[0..2]
+$a[2..1]
+$a[3,0,3]
+
+$a.Count
+$a.Length
+
+$a
+
+# ArrayList Dynamic Size
+[Collections.ArrayList] -> [System.Collections.ArrayList]		
+$DynamicArray = [System.Collections.ArrayList] @()
+$DynamicArray = [Collections.ArrayList] @()
+$DynamicArray.Add(111)
+
+
+# Nested Arrays
+$data = @( @(1,2,3), @(4,5,6), @(7,8,9) )
+
+
+# initialize with 0
+$a = [int[]]::new(4)
+$a = @(0) * 4
+
+
+
+
+
+===============================
+
+# Hash Table
+$h = @{}
+
+# Hash Table can't have same keys.
+$h = @{ Number = 1; Shape = "Square"; Color = "Blue"}
+$h = @{ Number = 1
+Shape = "Square"
+Color = "Blue"}
+
+$h = [ordered] @{ Number = 1; Shape = "Square"; Color = "Blue"}	# Ordered
+
+# Access/Modify Hash Table
+$h.Key = 'Value'
+$h.'Key' = 'Value'
+$h['Key'] = 'Value'
+
+# Add/Remove Hash Table
+Add('Key', 'Value')
+Remove('Key')
+$h.Clear()
+
+
+# ConvertFrom-StringData to Hash Table
+$string = @"
+Msg1 = Type "Windows".
+Msg2 = She said, "Hello, World."
+Msg3 = Enter an alias (or "nickname").
+"@
+
+$c = ConvertFrom-StringData $string
+
+------------------------------------

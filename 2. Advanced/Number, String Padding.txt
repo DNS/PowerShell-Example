@@ -1,0 +1,8 @@
+
+
+# If the value is a string, you can pad it with zeroes:
+'26'.PadLeft(4, '0')
+
+# If the value is numeric you can format it as a string:
+(26).ToString('0000')
+

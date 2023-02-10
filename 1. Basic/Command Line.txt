@@ -1,0 +1,20 @@
+# Inline statement
+pwsh -command { Write-Host 111 }
+
+# suppress banner message
+pwsh /nologo
+pwsh -nologo
+
+
+
+# Multiple command, insert new line
+[Shift]+[Enter]
+
+# Multiple command, insert new line to previous line
+[Ctrl]+[Enter]
+
+
+# Multiple command in single line
+Write-Host 111; Write-Host 222;
+
+

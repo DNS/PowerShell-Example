@@ -1,0 +1,9 @@
+Get-ChildItem 'MyDir' -Recurse -File | Measure-Object -Property Length -AllStats
+Get-ChildItem 'MyDir' -Recurse -File | Measure-Object -Property Length -Sum
+
+(Get-ChildItem 'MyDir' -Recurse -File | Measure-Object -Property Length -Sum).Sum
+
+
+
+
+

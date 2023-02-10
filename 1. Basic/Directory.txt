@@ -1,0 +1,23 @@
+
+Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>]
+    [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes
+    {ReadOnly | Hidden | System | Directory | Archive | Device | Normal | Temporary |
+    SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed | Encrypted |
+    IntegrityStream | NoScrubData}] [-FollowSymlink] [-Directory] [-File] [-Hidden]
+    [-ReadOnly] [-System] [<CommonParameters>]
+
+####################################
+
+# Get list directory content
+Get-ChildItem
+dir
+ls
+
+# list only files
+Get-ChildItem -File
+
+# list only directory
+Get-ChildItem -Directory
+
+# list all directory & subdir
+Get-ChildItem -Recurse

@@ -1,0 +1,12 @@
+# format data
+
+Format-Table
+Format-List
+Format-Wide
+Format-Hex
+
+Get-Process | Format-List
+
+255,255 | Format-Hex
+
+

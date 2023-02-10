@@ -1,0 +1,14 @@
+Get-Content -ReadCount 512 -AsByteStream .\original.jpg | Set-Content -AsByteStream .\clone1.jpg
+
+# Concatenate / Append
+Get-Content -ReadCount 512 -AsByteStream .\original.jpg | Add-Content -AsByteStream .\clone2.jpg
+
+Get-Content -ReadCount 512 -AsByteStream .\original1.jpg, .\original2.jpg | Set-Content -AsByteStream .\clone.jpg
+
+
+
+
+
+
+
+
