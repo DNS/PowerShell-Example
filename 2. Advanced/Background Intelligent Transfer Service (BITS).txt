@@ -1,0 +1,33 @@
+; Background Intelligent Transfer Service (BITS)
+; To schedule download/upload file, better than Invoke-WebRequest/wget
+; cons: can't download local files (localhost) while the network state is offline
+
+; download file (Synchronous)
+Start-BitsTransfer $url1, $url2
+
+; upload file (Synchronous)
+Start-BitsTransfer -Source "c:\test.txt" -Destination "https://f2.mangekyo.xyz/test.txt" -TransferType Upload
+
+---------------------------
+
+; add download job to queue (Asynchronous)
+Start-BitsTransfer $url1 -Asynchronous
+Start-BitsTransfer $url2 -Asynchronous
+
+; view jobs
+Get-BitsTransfer
+
+
+; remove all scheduled jobs
+Get-BitsTransfer | Remove-BitsTransfer
+
+
+
+; suspend jobs
+Suspend-BitsTransfer
+
+; resume suspended jobs
+Resume-BitsTransfer
+
+
+

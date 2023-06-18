@@ -1,0 +1,15 @@
+; install module to system
+Import-Module .\test.ps1
+
+
+; micro-webframework
+Install-Module -Name Polaris -Scope CurrentUser -Force
+
+; convert .ps1 to .exe (install as Administrator, and using std Windows PowerShell 5.x)
+Install-Module ps2exe
+Invoke-ps2exe .\a.ps1 .\a.exe
+Invoke-ps2exe .\a.ps1 .\a.exe -noConsole -noOutput -noError -DPIAware -winFormsDPIAware
+
+Win-PS2EXE
+
+

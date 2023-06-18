@@ -1,0 +1,8 @@
+
+
+$lambda = {
+    Write-Output $args
+}
+
+
+$lambda.Invoke(1,2,3)
