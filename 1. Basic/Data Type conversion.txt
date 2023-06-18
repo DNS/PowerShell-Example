@@ -9,3 +9,5 @@ $b
 $a = [char] 65 + [char] 66
 $a
 
+$s = Out-String -InputObject $a
+

@@ -1,14 +1,31 @@
-# -InputObject
 
-# all at once
-1..5 | Write-Output
+-InputObject 
 
-# -InputObject work one-by-one
-1..5 | % { Write-Output -InputObject $_ }
+-InputObject is, by convention, a generic parameter name for what should 
+be considered to be pipeline input.
+
+When you pipe multiple objects to a command, PowerShell sends the objects 
+to the command one at a time. When you use a command parameter, the objects 
+are sent as a single array object. This minor difference has significant 
+consequences.
+
+The cmdlet does not unroll -InputObject itself, the data is delivered 
+one element at a time. This is why you might see problems when passing a 
+collection to the -InputObject parameter directly - because the cmdlet is 
+probably not designed to unroll a collection itself, it expects each 
+collection element to be handed to it in a piecemeal fashion.
 
 
+# Example:
+$b = @(1, 2, 3)
+ForEach-Object -InputObject $b { Write-Host "Start $_ End" }
+
+# Compared with:
+$b = @(1, 2, 3)
+$b | ForEach-Object { Write-Host "Start $_ End" }
 
 
-
+For the vast majority of cmdlets, direct use of the -InputObject parameter 
+is indeed pointless.
 
 

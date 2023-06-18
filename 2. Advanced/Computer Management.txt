@@ -1,4 +1,6 @@
 Stop-Computer
 Restart-Computer
 
----------
+
+$env:
+

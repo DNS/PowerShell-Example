@@ -14,20 +14,35 @@ a (sample text)
 
 
 # String interpolation
+$a = 'Obito'
+Write-Output "My name is $a"
+
 Write-Host "65: $([char] 65)"
 
-$b = 'bbb'
-Write-Host "a$($b)c"
+$b = 'b'
+Write-Host "a$( 'x' + $b + 'z' )c"
+
 
 
 # Concatenation
-$a = 'abc' + 579 + 'xyz'
+$a = 'abc' + 123 + 'xyz'
 $a += 'Hello'
+
+$b = "$c$d$e"
+
+$var = -join("Hello", " ", "world");
+
+
 
 # Concatenation (Faster)
 $a = [System.Text.StringBuilder]::new()
 $a.Append('aaa') > $null
 $a.ToString()
+
+# find string in files or variables
+$array | Select-String 'MyPattern'
+$array | Select-String -Path "Users\*.csv" -Pattern '\\b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b' | Select-Object -First 10
+
 
 
 

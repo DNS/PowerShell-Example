@@ -1,9 +1,12 @@
+# use Background operator &
+Write-Host 'from A'  &  Write-Host 'from B'  &
+
 # PSJob
+# That command is functionally equivalent to the following usage of Start-Job
+Start-Job -ScriptBlock { Write-Host 'from A' }
+Start-Job -ScriptBlock { Write-Host 'from B' }
 
-Start-Job -ScriptBlock { Start-Sleep 5; Write-Host 'from job' }; Write-Host 'pass'
-
-
-
+------------------
 
 # Creating New Jobs
 Start-Job -ScriptBlock { Start-Sleep 5 }
@@ -16,9 +19,19 @@ Receive-Job $job
 $job = Start-Job -ScriptBlock {param($b); Write-Output 'Hello World'; Write-Output $b }  -ArgumentList 'zzzzz'
 Receive-Job $job
 
+# remove job
+$job = Get-Process -Name pwsh &
+Receive-Job $job -Wait
+Remove-Job $job
+
+# get all list background job
+Get-Job
 
 
-
+# remove all background job
+Start-Job { Start-Sleep 10000 }
+Get-Job | Stop-Job
+Get-Job | Remove-Job
 
 
 
