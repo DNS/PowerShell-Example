@@ -1,8 +1,20 @@
 # powershell version
 $PSVersionTable
 
-# currently running script path
+# running script full path
 $PSCommandPath
+
+---------------
+
+$Script
+
+# running script file name
+$Script:MyInvocation.MyCommand
+$MyInvocation.MyCommand
+
+# running script full path
+$Script:MyInvocation.InvocationName
+$MyInvocation.InvocationName
 
 ---------------
 

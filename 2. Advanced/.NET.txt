@@ -2,14 +2,22 @@
 
 $Button = New-Object System.Windows.Forms.Button
 $Button = [System.Windows.Forms.Button]::new()
+$Button = [System.Windows.Forms.Button] @{}
+$Button = [System.Windows.Forms.Button] $arg
+
+$w = [System.Windows.Forms.Form] @{
+    Text = 'Window Title'
+    Width = 500
+    Height = 500
+}
 
 $random = [System.Random]::new()
-$number = $random.Next(1, 101)
-Write-Output $number
+$random.Next(1, 101)
 
 $random = New-Object System.Random
-$number = $random.Next(1, 101)
-Write-Output $number
+$random = New-Object 'System.Random'
+$random.Next(1, 101)
+
 
 --------------
 
@@ -17,3 +25,7 @@ Write-Output $number
 
 $WshShell = New-Object -ComObject WScript.Shell
 $WshShell | Get-Member
+
+
+
+
