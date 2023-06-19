@@ -1,5 +1,8 @@
 # .NET
 
+$Button = New-Object System.Windows.Forms.Button
+$Button = [System.Windows.Forms.Button]::new()
+
 $random = [System.Random]::new()
 $number = $random.Next(1, 101)
 Write-Output $number
