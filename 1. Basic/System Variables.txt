@@ -1,7 +1,13 @@
-$env
+# powershell version
 $PSVersionTable
 
+# currently running script path
+$PSCommandPath
+
 ---------------
+
+# system environment variable
+$env
 
 $env:Path
 $env:USERNAME

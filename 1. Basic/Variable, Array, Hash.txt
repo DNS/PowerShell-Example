@@ -1,3 +1,4 @@
+# accessing "global/local/private" variable
 
 $local:DemoVar = "hello"
 $DemoVar = "hello"
