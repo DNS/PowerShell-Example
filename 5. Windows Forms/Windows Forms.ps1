@@ -40,6 +40,7 @@ $Label3.AutoSize = $true
 $main_form.Controls.Add($Label3)
 
 $Button = New-Object System.Windows.Forms.Button
+#$Button = [System.Windows.Forms.Button]::new()
 $Button.Location = New-Object System.Drawing.Size(400,10)
 $Button.Size = New-Object System.Drawing.Size(120,23)
 $Button.Text = "Check"
@@ -53,8 +54,6 @@ $Button.Add_Click({
 
 
 })
-
-
 
 
 $main_form.ShowDialog() > $null
