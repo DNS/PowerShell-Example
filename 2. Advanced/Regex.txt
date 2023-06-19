@@ -16,10 +16,18 @@ $s.Replace('text', 'pattern', 'OrdinalIgnoreCase')
 $m = [regex]::Matches($text, $pattern)
 $m
 
-# capture match value
+# Capture match value #1
+$string -match 'pattern'
+$Matches
+
+string -match ... and collection -match ... are two different operators. 
+The first gets a Boolean value and fills $matches. The second gets each 
+collection item that matches a pattern and apparently does not fill $matches.
+
+# Capture match value #2
 $string | Select-String "(F\d\d)" -AllMatches  | % Matches | % Value
 
-# capture group
+# Capture group
 $string | Select-String '(a)' -AllMatches | % Matches | % {$_.Groups[1].Value}
 
 

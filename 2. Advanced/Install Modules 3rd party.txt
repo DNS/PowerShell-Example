@@ -1,15 +1,24 @@
-; install module to system
+; import custom module to system
 Import-Module .\test.ps1
+Import-Module .\Invoke-Obfuscation.psd1
+
+; install module from powershellgallery.com
+Set-PSRepository 'PSGallery' -InstallationPolicy Trusted
+Install-Module ModuleNameXYZ
+Uninstall-Module ModuleNameXYZ
 
 
 ; micro-webframework
 Install-Module -Name Polaris -Scope CurrentUser -Force
+Install-Module -Name Pode
 
 ; convert .ps1 to .exe (install as Administrator, and using std Windows PowerShell 5.x)
 Install-Module ps2exe
 Invoke-ps2exe .\a.ps1 .\a.exe
 Invoke-ps2exe .\a.ps1 .\a.exe -noConsole -noOutput -noError -DPIAware -winFormsDPIAware
-
 Win-PS2EXE
 
+; SQLite
+Install-Module SQLite
 
+Install-Module Selenium
