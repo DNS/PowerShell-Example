@@ -4,6 +4,7 @@ Import-Module .\Invoke-Obfuscation.psd1
 
 ; install module from powershellgallery.com
 Set-PSRepository 'PSGallery' -InstallationPolicy Trusted
+Find-Module ModuleNameXYZ
 Install-Module ModuleNameXYZ
 Uninstall-Module ModuleNameXYZ
 
