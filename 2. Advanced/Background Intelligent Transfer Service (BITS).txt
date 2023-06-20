@@ -14,6 +14,9 @@ Start-BitsTransfer -Source "c:\test.txt" -Destination "https://f2.mangekyo.xyz/t
 Start-BitsTransfer $url1 -Asynchronous
 Start-BitsTransfer $url2 -Asynchronous
 
+# write filename / finish all completed jobs
+Get-BitsTransfer | Complete-BitsTransfer
+
 ; view jobs
 Get-BitsTransfer
 
