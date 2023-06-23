@@ -9,6 +9,8 @@ $a = Get-Content -Path 111.jpg -AsByteStream
 # File Concatenate
 Get-Content test.txt -ReadCount 0 -AsByteStream | Write-Host
 Get-Content 111.jpg -ReadCount 0 -AsByteStream | Set-Content 222.jpg -AsByteStream
+
+Get-Content -AsByteStream .\original.bin | Add-Content -AsByteStream .\appended-file.bin
 Get-Content 1.txt, 2.txt | Add-Content 3.txt -NoNewline
 
 -ReadCount value of 0 reads the entire file in a single 
