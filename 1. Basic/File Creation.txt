@@ -1,0 +1,34 @@
+'Hello 1' > file1.txt
+'Hello 2' | Out-File file2.txt
+'Hello 3' | Set-Content file3.txt
+
+'World' >> file1.txt
+'World' | Out-File file2.txt -Append
+'World' | Add-Content file3.txt
+'World' | Add-Content file3.txt -NoNewline
+
+Get-Content file1.txt, file2.txt | Set-Content file4.txt
+Get-Content file1.txt, file2.txt | Add-Content file5.txt
+
+
+#########################
+
+DIFFERENCES:
+
+# >
+'>' Has limitation.
+Can't decide what encoding to use.
+It will cut lines same way they are displayed.
+Out-File has -Width parameter that helps you avoid this.
+
+# Read and write locking
+While Out-File is running, another application can read the log file.
+While Set-Content is running, other applications cannot read the log file. Thus never use Set-Content to log long running commands.
+
+# Encoding (default, but can be overide)
+Out-File saves in Unicode (UTF-16LE)
+Set-Content saves in ASCII (US-ASCII)
+
+# Formatting
+Out-File saves the fancy formatting of the output, as seen in the terminal.
+Set-Content saves a simpler representation.
