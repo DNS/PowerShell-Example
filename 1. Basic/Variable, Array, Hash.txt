@@ -91,6 +91,11 @@ Remove('Key')
 $h.Clear()
 
 
+# Loop Hash Table
+foreach ($i in $h.Keys) { $i + ' : ' + $h.$i }
+foreach ($i in $h.GetEnumerator()) { $i.Name + ' : ' + $i.Value }
+
+
 # ConvertFrom-StringData to Hash Table
 $string = @"
 Msg1 = Type "Windows".
