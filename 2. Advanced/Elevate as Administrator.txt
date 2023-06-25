@@ -1,0 +1,11 @@
+
+# elevate.ps1
+Start-Process pwsh -Verb runAs -ArgumentList '-File .\test.ps1'
+
+
+# test.ps1
+Write-Output 'Elevated Success' > 'C:\Program Files\111.txt'
+Write-Output 'Out: Elevated Success'
+Pause
+
+
