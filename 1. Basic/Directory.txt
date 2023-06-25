@@ -21,3 +21,10 @@ Get-ChildItem -Directory
 
 # list all directory & subdir
 Get-ChildItem -Recurse
+
+####################################
+
+# copy multiple file types to destination directory
+dir .\OLD\*.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
+dir .\OLD\* -Include *.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
+
