@@ -1,5 +1,5 @@
-cmd.exe - max 8191 characters
-powershell.exe - 32764 characters
+cmd.exe -> max 8191 characters
+powershell.exe -> 32764 characters
 
 So when using passing chars/byte use less than mentioned limitation above.
 Eg:
