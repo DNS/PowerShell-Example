@@ -13,7 +13,9 @@ Laa shay'a waqi'un mutlaq bale kouloun moumkin.
 
 
 [Console]::Write('Hello World')
+[Console]::WriteLine()
 [Console]::Out.Write('Hello World')
+[Console]::Out.WriteLine('Hello World')
 
 # Write-Output writes to the pipeline
 Write-Output 444 | foreach{ $_ + 555 }
