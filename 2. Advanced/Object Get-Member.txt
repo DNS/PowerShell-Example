@@ -1,0 +1,6 @@
+# gets the members, the properties and methods, of objects.
+$a = 123
+Get-Member -InputObject $a
+Get-Process | Get-Member
+
+
