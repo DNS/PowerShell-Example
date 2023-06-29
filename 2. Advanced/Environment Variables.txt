@@ -1,4 +1,0 @@
-$env:Path
-
-$env:Path += ';C:\mypath'
-
