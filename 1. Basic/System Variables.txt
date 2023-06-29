@@ -7,6 +7,9 @@ $PSCommandPath
 # powershell executable spath
 $PSHOME
 
+# user directory
+$HOME
+
 ---------------
 
 $Script
@@ -28,4 +31,7 @@ $env:Path
 $env:USERNAME
 $env:APPDATA
 $env:COMPUTERNAME
+
+# add new ENV path
+$env:Path += ';C:\mypath'
 
