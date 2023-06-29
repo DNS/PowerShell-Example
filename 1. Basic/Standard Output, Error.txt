@@ -49,4 +49,12 @@ $a | Out-Null
 $a > $null
 
 
+# Set Font Color
+Write-Host 'GREEN ' -NoNewline -ForegroundColor Green
+Write-Host 'CYAN ' -NoNewline -ForegroundColor Cyan
+Write-Host 'RED ' -NoNewline -ForegroundColor Red
+Write-Host 'YELLOW ' -NoNewline -ForegroundColor Yellow
+Write-Host 'BLUE ' -NoNewline -ForegroundColor Blue
+
+
 
