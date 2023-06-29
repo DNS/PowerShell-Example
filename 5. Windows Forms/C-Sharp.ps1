@@ -1,4 +1,4 @@
-add-type @"
+Add-Type @"
 namespace MyNamespace
 {
     public class MyProgram
