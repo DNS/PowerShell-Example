@@ -4,6 +4,9 @@ $PSVersionTable
 # running script full path
 $PSCommandPath
 
+# powershell executable spath
+$PSHOME
+
 ---------------
 
 $Script
