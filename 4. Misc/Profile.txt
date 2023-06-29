@@ -20,5 +20,12 @@ For example, the PowerShell console supports the following basic profile files. 
         Linux - ~/.config/powershell/Microsoft.Powershell_profile.ps1
         macOS - ~/.config/powershell/Microsoft.Powershell_profile.ps1
 
+---------------------------
+
+# to open specific directory everytime pwsh launched
+[EDIT] "$HOME\Documents\PowerShell\Profile.ps1"
+cd C:\mypath
+
+
 
 
