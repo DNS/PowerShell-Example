@@ -1,0 +1,8 @@
+# Set ENV variable
+# System Properties > Environment Variables
+POWERSHELL_UPDATECHECK = Off
+
+
+# or in linux
+[EDIT] ~/.profile
+export POWERSHELL_UPDATECHECK=Off
