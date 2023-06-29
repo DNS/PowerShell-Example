@@ -19,8 +19,18 @@ Get-ChildItem -File
 # list only directory
 Get-ChildItem -Directory
 
-# list all directory & subdir
+# list all directory & subdirectory
 Get-ChildItem -Recurse
+
+
+# list all directory content including hidden/system/other types
+dir * -Force
+
+# list directory content with specific attributes
+dir * -Attributes ReadOnly, Hidden, System, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData
+dir * -Attributes @('ReadOnly', 'Hidden', 'System', 'Directory', 'Archive', 'Device', 'Normal', 'Temporary', 'SparseFile', 'ReparsePoint', 'Compressed', 'Offline', 'NotContentIndexed', 'Encrypted', 'IntegrityStream', 'NoScrubData')
+
+
 
 ####################################
 
