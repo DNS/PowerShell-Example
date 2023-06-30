@@ -22,9 +22,14 @@ For example, the PowerShell console supports the following basic profile files. 
 
 ---------------------------
 
-# to open specific directory everytime pwsh launched
+# Windows: to open specific directory everytime pwsh launched
 [EDIT] "$HOME\Documents\PowerShell\Profile.ps1"
 cd C:\mypath
+
+# Linux
+[EDIT] ~/.config/powershell/profile.ps1
+cd C:\mypath
+
 
 
 
