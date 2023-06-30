@@ -18,7 +18,7 @@ Get-Process | ? { $_.ProcessName -like 'svchost' }
 1..10 | where {$_ -le 5 }
 
 
-Get-Process | ? ProcessName -like 'node' | Stop-Process
+Get-Process | ? ProcessName -like 'firefox' | Stop-Process
 
 
 
