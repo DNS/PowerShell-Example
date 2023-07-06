@@ -11,9 +11,20 @@ if () {
 }
 
 
-Switch () {
+--------------------
 
+
+Switch (<test-expression>)
+{
+    <result1-to-be-matched> {<action>}
+    <result2-to-be-matched> {<action>}
 }
+
+The equivalent if statements are:
+
+if (<result1-to-be-matched> -eq (<test-expression>)) {<action>}
+if (<result2-to-be-matched> -eq (<test-expression>)) {<action>}
+
 
 
 
