@@ -26,9 +26,6 @@ if (<result1-to-be-matched> -eq (<test-expression>)) {<action>}
 if (<result2-to-be-matched> -eq (<test-expression>)) {<action>}
 
 
-
-
-
 --------------------
 
 # logical operator (case insensitive)

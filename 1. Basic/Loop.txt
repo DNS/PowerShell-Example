@@ -1,26 +1,52 @@
 
-$a = 1..5
-
-
+# For
 for ($i=0; $i -lt $a.Length; $i++) { $a[$i] }
 
+# ForEach-Object
+$a = @(1..5)
 foreach ($i in $a) { 'Counting ' + $i }
+$a | foreach { 'Counting ' + $_ }
+$a | % { 'Counting ' + $_ }
+
 
 # foreach{} same as %{} shortcut with pipe
 $a | foreach { 'Counting ' + $_ }
 $a | % { 'Counting ' + $_ }
 
 
-# continue & break
-foreach ($file in $files) {
-	Continue
-	Break
-}
-
-
-
+# While
 while ($val -ne 3) {
     $val++
     Write-Host $val
 }
+
+
+----------------------------
+
+# continue & break
+
+Since ForEach-Object is a cmdlet, break and continue will behave differently compared than foreach in other languages. Both will stop the loop but will also terminate the entire script:
+
+0..3 | foreach {
+    if ($_ -eq 2) { Break }
+    $_
+}
+Write-Output "Never printed"
+
+
+0..3 | foreach {
+    if ($_ -eq 2) { Continue }
+    $_
+}
+Write-Output "Never printed"
+
+
+
+# There is a way to break from ForEach-Object without throwing an exception. It employs a lesser-known feature of Select-Object, using the -First parameter, which actually breaks the pipeline when the specified number of pipeline items have been processed.
+
+$a = @(1..5)
+$a | foreach { if ($_ -eq 3) { $_  } } | Select-Object -First 1
+
+
+
 
