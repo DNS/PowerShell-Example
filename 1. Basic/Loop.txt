@@ -13,6 +13,10 @@ $a | % { 'Counting ' + $_ }
 $a | foreach { 'Counting ' + $_ }
 $a | % { 'Counting ' + $_ }
 
+# Loop Hash Table
+foreach ($i in $h.Keys) { $i + ' : ' + $h.$i }
+foreach ($i in $h.GetEnumerator()) { $i.Name + ' : ' + $i.Value }
+
 
 # While
 while ($val -ne 3) {
