@@ -1,9 +1,9 @@
 Invoke-WebRequest   	IWR
-Invoke-RestMethod		IRM
+Invoke-RestMethod       IRM
 
 
 # Invoke-WebRequest member variable
-Invoke-WebRequest   IWR
+Invoke-WebRequest       IWR
 	StatusCode
 	StatusDescription
 	Content
