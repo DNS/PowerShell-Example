@@ -31,3 +31,8 @@ $LoginForm.Fields["user"] = "username"
 $LoginForm.Fields["password"] = "password"
 $result = Invoke-WebRequest -Uri $LoginForm.Action -WebSession $ss -Method Post
 
+# Socks5 Proxy
+$result = Invoke-WebRequest -Uri https://someSite.com/ -Proxy "socks5://127.0.0.1:8000"
+
+
+
