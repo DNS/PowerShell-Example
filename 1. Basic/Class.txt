@@ -1,6 +1,7 @@
 class Hoo {
     [string] $Brand = "ABCD"
     [int] $Model = 72
+
     Hoo () {}
 
     [string] PrintAll ([int] $a) {
