@@ -1,0 +1,20 @@
+class Hoo {
+    [string] $Brand = "ABCD"
+    [int] $Model = 72
+    Hoo () {}
+
+    [string] PrintAll ([int] $a) {
+        ## Add argument validation logic here
+        $this.Model = $a
+        Write-Host 'WRITE-HOST WORKS ' $this.Model
+        Write-Output 'NOT PRINTED ' $this.Model
+        return 'abc'
+    }
+}
+
+$h = [Hoo]::new()
+$h.Model = 88
+$h.PrintAll(111)
+
+
+
