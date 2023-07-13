@@ -1,16 +1,16 @@
 ﻿
 # STDOUT
-123
 'Hello World'
+12345
 Write-Output 'Hello World'
 Write-Host 'Hello World'
 
+Write-Output 'भवचक्र'
 Write-Output 'ダイスキ'
+Write-Output 'لا شيء واقع مطلق بل كل ممكن'
 
-Nothing is true, everything is permitted.
-Laa shay'a waqi'un mutlaq bale kouloun moumkin.
-لا شيء واقع مطلق بل كل ممكن
-
+"Nothing is true, everything is permitted."
+'Laa shay'a waqi'un mutlaq bale kouloun moumkin.'
 
 [Console]::Write('Hello World')
 [Console]::WriteLine()
