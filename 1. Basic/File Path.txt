@@ -4,8 +4,10 @@
 $f = 'D:\my\dir\file123.txt'
 $f = 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/grand-theft-auto-5/3/3d/GTA_V.HD_SCREENCAPS.PS3.1099.jpg?width=325'
 
-Split-Path $f -Leaf
 Split-Path $f -Parent
+Split-Path $f -Leaf
+Split-Path $f -LeafBase
+Split-Path $f -Extension
 
 # Extract file basename & extension
 $i = Get-Item 'D:\my\dir\file123.txt'
