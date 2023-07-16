@@ -1,0 +1,10 @@
+
+
+# Saves command output in a file or variable and also sends it down the pipeline.
+
+Write-Output "Hello`nWorld" | Tee-Object -FilePath hello.txt
+Get-Process | Tee-Object -FilePath testfile2.txt
+
+
+
+

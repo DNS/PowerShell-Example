@@ -27,3 +27,9 @@ Get-ChildItem *.txt -Recurse
 Get-ChildItem . -Include *.txt -Recurse
 
 
+# Resolves the wildcard characters in a path, and displays the path contents.
+Resolve-Path *.mp4
+
+# Determines whether all elements of a path exist.
+Test-Path
+

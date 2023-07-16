@@ -1,8 +1,8 @@
 
-Get-Process	PS
-Start-Process	START
-Stop-Process	KILL
-
+Get-Process
+Start-Process
+Stop-Process
+Wait-Process
 
 Normally, for internal commands PowerShell does wait before starting the next command. One exception to this rule is external Windows subsystem based EXE. The first trick is to pipeline to Out-Null like so:
 
