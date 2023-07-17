@@ -4,7 +4,7 @@ ConvertFrom-Json "{'a':111, 'b':222}"
 $b = $a | ConvertFrom-Json
 
 $a = ~/firo/bin/firo-cli getnetworkinfo
-$b ConvertFrom-Json (Out-String -InputObject $a)
+$b = ConvertFrom-Json (Out-String -InputObject $a)
 
 
 
