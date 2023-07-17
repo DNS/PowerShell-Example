@@ -22,6 +22,9 @@ Get-ChildItem -Directory
 # list all directory & subdirectory
 Get-ChildItem -Recurse
 
+# delete directory
+Remove-Item C:\my\path -Recurse -Force
+del C:\my\path -Recurse -Force
 
 # list all directory content including hidden/system/other types
 dir * -Force

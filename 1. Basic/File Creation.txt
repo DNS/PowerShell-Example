@@ -1,3 +1,5 @@
+New-Item file.txt
+
 'Hello 1' > file1.txt
 'Hello 2' | Out-File file2.txt
 'Hello 3' | Set-Content file3.txt
