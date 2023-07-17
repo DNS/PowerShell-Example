@@ -33,3 +33,7 @@ Resolve-Path *.mp4
 # Determines whether all elements of a path exist.
 Test-Path
 
+# Converts a path from a PowerShell path to a PowerShell provider path.
+Convert-Path .
+Convert-Path ~
+

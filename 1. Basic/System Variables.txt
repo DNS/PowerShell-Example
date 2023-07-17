@@ -23,6 +23,16 @@ $Script:MyInvocation.InvocationName
 $MyInvocation.InvocationName
 
 ---------------
+# user environment directory
+Set-Location ~
+
+Write-Output "$env:HOMEDRIVE$env:HOMEPATH"
+
+
+
+
+
+---------------
 
 # system environment variable
 $env
