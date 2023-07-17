@@ -6,8 +6,15 @@ Import-Module .\Invoke-Obfuscation.psd1
 Set-PSRepository 'PSGallery' -InstallationPolicy Trusted
 Find-Module ModuleNameXYZ
 Install-Module ModuleNameXYZ
+
+; Uninstalls a module
 Uninstall-Module ModuleNameXYZ
 
+; Removes modules from the current session. This cmdlet doesn't uninstall the module or delete it from the computer. It affects only the current PowerShell session.
+Remove-Module ModuleNameXYZ
+
+; update/upgrade module
+Update-Module ModuleNameXYZ
 
 ; micro-webframework
 Install-Module -Name Polaris -Scope CurrentUser -Force
@@ -15,9 +22,8 @@ Install-Module -Name Pode
 
 ; convert .ps1 to .exe (install as Administrator, and using std Windows PowerShell 5.x)
 Install-Module ps2exe
-ps2exe .\a.ps1 .\a.exe
-ps2exe .\a.ps1 .\a.exe -noConsole -noOutput -noError -DPIAware -winFormsDPIAware
-Win-PS2EXE
+ps2exe -inputFile .\a.ps1 -outputFile .\a.exe
+ps2exe -inputFile .\a.ps1 -outputFile .\a.exe -noConsole -noOutput -noError -DPIAware -winFormsDPIAware
 
 ; SQLite
 Install-Module SQLite
