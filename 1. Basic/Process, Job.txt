@@ -12,3 +12,9 @@ Start-Process -Wait
 Stop-Process
 
 
+---------------------------
+
+Get-Job
+Get-Job | Remove-Job
+Get-Job | Stop-Job
+
