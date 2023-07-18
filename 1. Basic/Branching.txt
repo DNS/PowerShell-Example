@@ -14,10 +14,9 @@ if () {
 --------------------
 
 
-Switch (<test-expression>)
-{
-    <result1-to-be-matched> {<action>}
-    <result2-to-be-matched> {<action>}
+Switch ($a) {
+    1 { }
+    2 { }
 }
 
 The equivalent if statements are:
