@@ -9,7 +9,7 @@
 
 $s -Match ''
 
-$s -Replace ''			# doesn't modify $s
+$s -Replace '',''		# doesn't modify $s
 $s.Replace('text', 'pattern')	# modify $s
 $s.Replace('text', 'pattern', 'OrdinalIgnoreCase')
 
