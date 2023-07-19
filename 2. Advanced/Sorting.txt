@@ -12,6 +12,12 @@ $y = yt-dlp -j https://www.youtube.com/watch?v=ioNng23DkIM
 $y.formats | Sort-Object -Property:filesize
 
 
+------------------------
+
+$b.formats | ? vcodec -Match 'avc1' | ? acodec -Match 'mp4a' | Sort-Object -Property:format_note -Descending | Select-Object -First 1
+
+
+
 
 
 

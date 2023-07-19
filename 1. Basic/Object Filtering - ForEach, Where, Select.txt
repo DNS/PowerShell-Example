@@ -21,6 +21,9 @@ Get-Process | ? { $_.ProcessName -like 'svchost' }
 Get-Process | ? ProcessName -like 'firefox' | Stop-Process
 
 
+$b.formats | ? vcodec -Match 'avc1' | ? acodec -Match 'mp4a' | Sort-Object -Property:format_note -Descending | Select-Object -First 1
+
+
 
 ----------------------
 
