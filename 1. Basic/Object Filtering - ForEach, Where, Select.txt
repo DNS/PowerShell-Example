@@ -11,9 +11,13 @@ Get-Process | % { if ($_.ProcessName-like 'svchost') { $_ } }
 ----------------------
 
 # Where-Object or ? (similar to how SQL filter rows)
+
+Get-Process | Where-Object { $_.ProcessName -Like 'svchost' }
 Get-Process | Where-Object ProcessName -Like 'svchost'
+
 Get-Process | ? ProcessName -Like 'svchost'
 Get-Process | ? { $_.ProcessName -like 'svchost' }
+
 
 1..10 | where {$_ -le 5 }
 
