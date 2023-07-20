@@ -1,3 +1,11 @@
+# suppress output, error
+Remove-Item *.abc 2>&1 | Out-Null
+
+
+# only supress std error
+Remove-Item *.abc 2>$null
+
+
 
 
 $out = yt-dlp -f 17 https://www.youtube.com/watch?v=DxIqELaTI7s 2>&1
