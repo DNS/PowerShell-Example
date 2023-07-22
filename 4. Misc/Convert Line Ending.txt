@@ -1,0 +1,6 @@
+# unix to dos
+$(Get-Content .\file.txt -Raw).Replace("`n","`r`n") | Set-Content .\thumbnail-webp.txt -Force -Encoding utf8BOM
+
+# dos to unix
+$(Get-Content .\file.txt -Raw).Replace("`r`n","`n") | Set-Content .\thumbnail-webp.txt -Force -Encoding utf8BOM
+
