@@ -1,8 +1,8 @@
 [cmdletbinding()]
 Param(
     $Symbol
-    #$Argument1='default value',
-    #$Argument2,
+    #[Parameter(Mandatory=$true)] [string] $Argument1 = 'default value',
+    #$Argument2
 )
 
 $Argument1, $Argument2
