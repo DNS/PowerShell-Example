@@ -13,8 +13,18 @@ Stop-Process
 
 
 ---------------------------
+# Start a background job
+Start-Job -FilePath C:\Scripts\Sample.ps1
+Start-Job -ScriptBlock { notepad.exe }
 
 Get-Job
-Get-Job | Remove-Job
 Get-Job | Stop-Job
+Get-Job | Remove-Job
+
+# Use the background operator to start a background job
+Get-Process -Name pwsh &
+
+# Start a job using Invoke-Command
+Invoke-Command
+
 
