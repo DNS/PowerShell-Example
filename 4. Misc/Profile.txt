@@ -26,11 +26,21 @@ For example, the PowerShell console supports the following basic profile files. 
 [EDIT] "$HOME\Documents\PowerShell\Profile.ps1"
 cd C:\mypath
 
-# Linux
+# Linux #1 (current user, pwsh only)
 [EDIT] ~/.config/powershell/profile.ps1
 cd C:\mypath
 
+# Linux #2 (current user, all hosts)
+[EDIT] ~/.profile
+export PATH="/www:$PATH"
 
+---------------------------
 
+# Export path to ENV
+# Windows
+$env:Path += ';C:\mypath'
+
+# Linux
+$env:PATH += ':/www'
 
 
