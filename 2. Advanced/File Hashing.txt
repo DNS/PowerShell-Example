@@ -4,4 +4,6 @@ Get-FileHash
 # verify file & subdir content (recursive) using SHA256
 Get-ChildItem -File -Recurse | Get-FileHash
 
+# wrap
+Get-FileHash *.mp4 | Format-Table -Wrap
 
