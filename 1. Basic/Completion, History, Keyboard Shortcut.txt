@@ -1,0 +1,24 @@
+Get-History
+Clear-History
+
+[Up Arrow]
+[Down Arrow]
+[F8]
+
+[F7]
+
+
+# Switch between the inline and list prediction views.
+[F2]
+
+# Completion
+[Tab]
+[CTRL][Space]
+
+# Search History
+[CTRL][S]
+[CTRL][R]
+
+# Show Keyboard shortcut
+Get-PSReadLineKeyHandler
+
