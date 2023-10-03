@@ -41,3 +41,9 @@ dir * -Attributes @('ReadOnly', 'Hidden', 'System', 'Directory', 'Archive', 'Dev
 dir .\OLD\*.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
 dir .\OLD\* -Include *.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
 
+####################################
+
+# get current working directory path
+Get-Location
+gl
+pwd
