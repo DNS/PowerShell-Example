@@ -47,5 +47,9 @@ $number = $random.Next(1, 101)
 Write-Output $number
 
 
+------------------
+
+# cryptographically secure, using the RandomNumberGenerator class.
+Get-SecureRandom -Minimum 0 -Maximum 94
 
 
