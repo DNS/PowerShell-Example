@@ -1,4 +1,4 @@
- .ps1 	Script file
+.ps1 	Script file
 .psd1 	Module's manifest file; usually comes with a script module or binary module
 .psm1 	Script module file
 .dll 	DLL-compliant binary module file
