@@ -1,0 +1,16 @@
+Get-Service
+
+New-Service -Name "AAA123" -BinaryPathName 'C:\Path\myservice.exe arg1 arg2'
+New-Service -Name "AAA123" -BinaryPathName '"C:\Path with Space\myservice.exe" arg1 arg2'
+
+Set-Service
+
+Start-Service
+Stop-Service
+Restart-Service
+Resume-Service
+Suspend-Service
+
+Remove-Service -Name "AAA123"
+
+

@@ -1,0 +1,2 @@
+Get-Clipboard
+Set-Clipboard

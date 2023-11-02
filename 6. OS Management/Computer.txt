@@ -1,0 +1,9 @@
+Stop-Computer
+Restart-Computer
+
+Rename-Computer
+
+Get-ComputerInfo
+
+Clear-RecycleBin
+
