@@ -1,33 +1,42 @@
-; import custom module to system
+
+# import custom module to system
 Import-Module .\test.ps1
 Import-Module .\Invoke-Obfuscation.psd1
 
-; install module from powershellgallery.com
+# find module
+Find-Module MyModule123
+
+# install module from powershellgallery.com
 Set-PSRepository 'PSGallery' -InstallationPolicy Trusted
 Find-Module ModuleNameXYZ
 Install-Module ModuleNameXYZ
 
-; Uninstalls a module
+# Uninstalls a module
 Uninstall-Module ModuleNameXYZ
 
-; Removes modules from the current session. This cmdlet doesn't uninstall the module or delete it from the computer. It affects only the current PowerShell session.
+# Removes modules from the current session. This cmdlet doesn't uninstall the module or delete it from the computer. It affects only the current PowerShell session.
 Remove-Module ModuleNameXYZ
 
-; update/upgrade module
+# update/upgrade module
 Update-Module ModuleNameXYZ
 
-; micro-webframework
+# Publish module/script to powershellgallery.com
+PS> Publish-Module -Name <moduleName> -NuGetApiKey <apiKey> 
+PS> Publish-Script -Path <scriptPath> -NuGetApiKey <apiKey> 
+
+-----------------------------------
+# 3rd party modules
+
+# micro-webframework
 Install-Module -Name Polaris -Scope CurrentUser -Force
 Install-Module -Name Pode
 
-; convert .ps1 to .exe (install as Administrator, and using std Windows PowerShell 5.x)
+# convert .ps1 to .exe (install as Administrator, and using std Windows PowerShell 5.x)
 Install-Module ps2exe
 ps2exe -inputFile .\a.ps1 -outputFile .\a.exe
 ps2exe -inputFile .\a.ps1 -outputFile .\a.exe -noConsole -noOutput -noError -DPIAware -winFormsDPIAware
 
-; SQLite
 Install-Module SQLite
-
 Install-Module Selenium
 
 
