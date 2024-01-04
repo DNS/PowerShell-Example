@@ -1,10 +1,22 @@
-# use Background operator &
+Get-Job
+Get-Job | Stop-Job
+Get-Job | Remove-Job
+
+
+------------------------------
+
+# Background operator &
+# Use the background operator to start a background job
 Write-Host 'from A'  &  Write-Host 'from B'  &
 
 # PSJob
 # That command is functionally equivalent to the following usage of Start-Job
+Start-Job -FilePath C:\Scripts\Sample.ps1
 Start-Job -ScriptBlock { Write-Host 'from A' }
-Start-Job -ScriptBlock { Write-Host 'from B' }
+Start-Job -ScriptBlock { notepad.exe }
+
+# Start a job using Invoke-Command
+Invoke-Command
 
 ------------------
 
