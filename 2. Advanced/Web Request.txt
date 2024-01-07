@@ -25,11 +25,13 @@ hash table.
 
 
 # Cookies
-$result = Invoke-WebRequest -Uri 'https://someSite.com'  -SessionVariable ss
+$result = Invoke-WebRequest -Uri 'https://someSite.com' -SessionVariable ss
 $LoginForm = $result.Forms[0]
 $LoginForm.Fields["user"] = "username"
 $LoginForm.Fields["password"] = "password"
 $result = Invoke-WebRequest -Uri $LoginForm.Action -WebSession $ss -Method Post
+
+Note the lack of $ on session - that command creates a variable with the given name. After that command, you have a $ss variable, which you can then pass as the -WebSession in all subsequent requests.
 
 # Socks5 Proxy
 $result = Invoke-WebRequest -Uri https://someSite.com/ -Proxy "socks5://127.0.0.1:8000"

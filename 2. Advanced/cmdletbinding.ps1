@@ -1,11 +1,11 @@
 [cmdletbinding()]
 Param(
-    $Symbol
-    #[Parameter(Mandatory=$true)] [string] $Argument1 = 'default value',
-    #$Argument2
+    [Parameter(Mandatory=$true)] [string] $Argument1 = 'default value',
+    [string] $Argument2
 )
 
-$Argument1, $Argument2
+'arg1: ' + $Argument1
+'arg2: ' + $Argument2
 
 <#
 run:
