@@ -1,29 +1,42 @@
 
-[math]::Pow(x,y)
-[math]::Sqrt(x,y)
++		# Addition
+-		# Subtraction
+*		# Multiplication
+/		# Division
+%		# Modulus
+-band		# Bitwise AND
+-bnot		# Bitwise NOT
+-bor		# Bitwise OR
+-bxor		# Bitwise XOR
+-shl		# Shifts bits to the left
+-shr		# Shifts bits to the right
 
-[math]::Exp(x)		# e^x
-[math]::E
+[Math]::Pow(x,y)
+[Math]::Sqrt(x,y)
+[Math]::Exp(x)		# e^x
 
-[math]::PI
-[math]::Tau
+[Math]::E
+[Math]::PI
+[Math]::Tau
 
-[math]::BigMul(x,y)	# return Int64
+[Math]::BigMul(x,y)	# return Int64
 
-[math]::Abs(-5.6)
-[math]::Ceiling(5.4)
-[math]::Floor(5.4)
-[math]::Round(-5.641)
+[Math]::Abs(x)
+[Math]::Round(x)
+[Math]::Ceiling(x)
+[Math]::Floor(x)
+
 
 
 ###################
 Large integer, arbitrary-precision arithmetic
 
-$a = [bigint] 44444444444444444444444444444444444444444444
+$a = [bigint] 1234567890123456789012345678901234567890
 $a
 
 [bigint]::Pow(2, 4094) * [bigint]::Pow(777, 1024)
 
-
-
+[Math]::Round(x)
+[Math]::Ceiling(x)
+[Math]::Floor(x)
 
