@@ -56,8 +56,11 @@ $a | foreach { if ($_ -eq 3) { $_  } } | Select-Object -First 1
 # $input variable
 Contains an enumerator that enumerates all input that's passed to a function. The $input variable is available only to functions, script blocks (which are unnamed functions), and script files (which are saved script blocks).
 
-@(123,456) | %{ Write-Output $input }
+> example #1
+123, 456 | script.ps1
+# [EDIT] script.ps1
+foreach ($i in $input) { Write-Output $i }
 
-
-
+> example #2
+@(123, 456) | %{ Write-Output $input }
 
