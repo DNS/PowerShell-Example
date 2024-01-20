@@ -9,7 +9,7 @@ $a | foreach { 'Counting ' + $_ }
 $a | % { 'Counting ' + $_ }
 
 
-# foreach{} same as %{} shortcut with pipe
+# foreach{} same as %{} shortcut to be used with pipe
 $a | foreach { 'Counting ' + $_ }
 $a | % { 'Counting ' + $_ }
 
@@ -50,6 +50,13 @@ Write-Output "Never printed"
 
 $a = @(1..5)
 $a | foreach { if ($_ -eq 3) { $_  } } | Select-Object -First 1
+
+
+
+# $input variable
+Contains an enumerator that enumerates all input that's passed to a function. The $input variable is available only to functions, script blocks (which are unnamed functions), and script files (which are saved script blocks).
+
+@(123,456) | %{ Write-Output $input }
 
 
 
