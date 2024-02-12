@@ -36,10 +36,12 @@ PowerShell's -Match only returns first match. You have to use Select-String with
 -------------------
 
 # .NET
+$m = [regex]::Match($text, $pattern)
 $m = [regex]::Matches($text, $pattern)
+$m = [regex]::Replace($text, $pattern, $replacement)
 $m.Groups
 $m.Value
-
+$m.Groups[1].Captures[0]
 
 
 

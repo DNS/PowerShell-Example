@@ -1,7 +1,14 @@
+# Alias
+foreach -> ForEach-Object
+select -> Select-Object
+where -> Where-Object
+
+----------------------
+
 # ForEach-Object or % (similar to foreach loops in other languages)
 Get-Process | ForEach-Object ProcessName
 Get-Process | % ProcessName
-Get-Process | % { if ($_.ProcessName-like 'svchost') { $_ } }
+Get-Process | % { if ($_.ProcessName -Like 'svchost') { $_ } }
 
 1..10 | foreach { $_*100 }
 

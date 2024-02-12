@@ -25,7 +25,8 @@ PS> Publish-Module -Name <moduleName> -NuGetApiKey <apiKey>
 PS> Publish-Script -Path <scriptPath> -NuGetApiKey <apiKey> 
 
 -----------------------------------
-# 3rd party modules
+# Install 3rd party modules (run as Administrator)
+https://www.powershellgallery.com/packages/
 
 # micro-webframework
 Install-Module -Name Polaris -Scope CurrentUser -Force
@@ -37,8 +38,21 @@ ps2exe -inputFile .\a.ps1 -outputFile .\a.exe
 ps2exe -inputFile .\a.ps1 -outputFile .\a.exe -noConsole -noOutput -noError -DPIAware -winFormsDPIAware
 
 Install-Module SQLite
-Install-Module Selenium
 
+-----------------------------------
+
+# Install .NET C#/VB package
+https://www.nuget.org/packages/
+
+Install-Package Selenium.WebDriver
+
+-----------------------------------
+# Install Selenium WebDriver
+https://www.selenium.dev/downloads/
+https://www.nuget.org/api/v2/package/Selenium.WebDriver/4.17.0
+
+https://github.com/SeleniumHQ/selenium/releases/
+https://github.com/mozilla/geckodriver/releases
 
 
 

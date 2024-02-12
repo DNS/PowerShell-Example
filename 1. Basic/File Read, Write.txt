@@ -26,15 +26,29 @@ It will cut lines same way they are displayed.
 Out-File has -Width parameter that helps you avoid this.
 
 # Read and write locking
-While Out-File is running, another application can read the log file.
+While Out-File is running, another application can read the log file (can be overriden with -NoClobber).
 While Set-Content is running, other applications cannot read the log file. Thus never use Set-Content to log long running commands.
 
-# Encoding (default, but can be overide)
-Out-File saves in Unicode (UTF-16LE)
-Set-Content saves in ASCII (US-ASCII)
+# Encoding
+Out-File saves in Unicode (UTF-16LE, can be overriden)
+Set-Content saves in ASCII (US-ASCII, can be overriden)
+>, >> (can't set encoding)
 
 # Formatting
 Out-File saves the fancy formatting of the output, as seen in the terminal.
 Set-Content saves a simpler representation.
+
+# Performance
+Add-Content is slower than >>, Out-File -Append
+
+# BENCHMARK PERFORMANCE:
+Add-Content        61.24s
+Out-File -Append   4.42s
+>>                 4.41s
+
+
+
+
+
 
 
