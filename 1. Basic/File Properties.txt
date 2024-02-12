@@ -1,0 +1,4 @@
+# set Read only
+Set-ItemProperty .\123.txt -Name IsReadOnly -Value $true
+
+

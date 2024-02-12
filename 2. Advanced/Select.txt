@@ -1,0 +1,10 @@
+
+# get unique record in array
+@(2,1,1,1,1,2,3) | select -Unique
+@(2,1,1,1,1,2,3) | sort -Unique
+
+
+# Get-Unique need sorted array, otherwise it wont work
+@(2,1,1,1,1,2,3) | Get-Unique
+@(2,1,1,1,1,2,3) | sort | Get-Unique
+
