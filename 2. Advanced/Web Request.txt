@@ -36,5 +36,12 @@ Note the lack of $ on session - that command creates a variable with the given n
 # Socks5 Proxy
 $result = Invoke-WebRequest -Uri https://someSite.com/ -Proxy "socks5://127.0.0.1:8000"
 
+# User Agent
+Invoke-WebRequest -Uri https://someSite.com/ -UserAgent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0'
+
+# set HTTP Referer
+Invoke-WebRequest -Uri https://someSite.com/ -Headers @{'Referer'= 'http://mywebsite/origin.html'}
+
+
 
 

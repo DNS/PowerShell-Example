@@ -106,3 +106,9 @@ Msg3 = Enter an alias (or "nickname").
 $c = ConvertFrom-StringData $string
 
 ------------------------------------
+
+# delete variable
+$var1 = 'hello'
+Clear-Variable $var1
+
+
