@@ -2,13 +2,13 @@
 
 # default value -ThrottleLimit is 5
 
+1..10 | % -ThrottleLimit 4 -Parallel { $_ }
+
 ForEach-Object -ThrottleLimit 4 -Parallel {
     # this will be your file
 } 
 
 ForEach-Object -InputObject (1..10) -ThrottleLimit 4 -Parallel { $_ }
-
-1..10 | % -ThrottleLimit 4 -Parallel { $_ }
 
 @Array | ForEach-Object -ThrottleLimit 4 -Parallel { $_ }
 

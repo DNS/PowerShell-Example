@@ -1,0 +1,1 @@
+$(Get-ChildItem *.mp4,*.webp,*.jpg,*.srt).Name | %{ Move-Item -LiteralPath $_ -Destination $($_ -replace ' \[.+?\]','') }
