@@ -1,7 +1,7 @@
 # Alias
-foreach -> ForEach-Object
-select -> Select-Object
-where -> Where-Object
+foreach -> ForEach-Object -> % {  }
+select  -> Select-Object 
+where   -> Where-Object   -> ? {  }
 
 ----------------------
 

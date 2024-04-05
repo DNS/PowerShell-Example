@@ -23,6 +23,9 @@ a (sample text)
 "@
 
 
+Set-Variable -Name $var1 -Value (0x5555)
+Write-Output $var1
+
 =====================
 
 # Array Fixed Size
@@ -76,7 +79,8 @@ $h = @{}
 $h = @{ Number = 1; Shape = "Square"; Color = "Blue"}
 $h = @{ Number = 1
 Shape = "Square"
-Color = "Blue"}
+Color = "Blue"
+}
 
 $h = [ordered] @{ Number = 1; Shape = "Square"; Color = "Blue"}	# Ordered
 
@@ -110,5 +114,22 @@ $c = ConvertFrom-StringData $string
 # delete variable
 $var1 = 'hello'
 Clear-Variable $var1
+
+===============================
+
+# Creating an array with large initial size
+
+$arr = New-Object int[] 10
+$arr = [int[]]::new(10)
+
+$a = @(0..10)
+
+$arr = @($null) * 10
+$arr = @('a') * 10
+
+# Creating a variable with large initial size
+$arr = @('a') * 10 -join ''
+
+
 
 

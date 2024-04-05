@@ -1,1 +1,23 @@
 Get-History
+Invoke-History 	
+Add-History
+Clear-History
+
+# enable drop-down history completition
+Set-PSReadLineOption -PredictionViewStyle ListView
+
+[EDIT] $PROFILE file to make it permanent.
+
+# enable inline history completition
+Set-PSReadLineOption -PredictionViewStyle InlineView
+
+
+# Shortcut
+    UpArrow - Displays the previous command.
+    DownArrow - Displays the next command.
+    F7 - Displays the command history.
+    ESC - To hide the history.
+    F8 - Finds a command. Type one or more characters then press F8. Press F8 again the next instance.
+    F9 - Find a command by history ID. Type the history ID then press F9. Press F7 to find the ID.
+    #<string>Tab - Search the history for *<string>* and returns the most recent match. If you press Tab repeatedly, it cycles through the matching items in your history.
+
