@@ -1,4 +1,29 @@
-$args
 
 $MyInvocation
+
+---------------------------------
+
+# inline argument
+
+[CLI]
+myscript.ps1 111 222 333
+
+[myscript.ps1]
+$args
+
+
+---------------------------------
+# pipe argument
+
+[CLI]
+111, 222, 333 | myscript.ps1
+
+[myscript.ps1]
+$input
+
+Since $input is an enumerator, accessing any of its properties causes $input to no longer be available. You can store $input in another variable to reuse the $input properties.
+
+# to reuse $input, copy $input into another array
+$array = $input | % { $_ }
+
 

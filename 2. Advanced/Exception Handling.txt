@@ -1,0 +1,19 @@
+
+try {
+
+} catch {
+
+}
+
+------------------------
+
+# disable error message
+
+$ErrorActionPreference = 'SilentlyContinue'
+
+
+Invoke-WebRequest -Uri "http://localhost/" -ErrorAction SilentlyContinue -SkipHttpErrorCheck
+
+Invoke-RestMethod -Uri "http://localhost/" -ErrorAction SilentlyContinue -SkipHttpErrorCheck
+
+
