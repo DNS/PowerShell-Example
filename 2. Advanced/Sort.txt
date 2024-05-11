@@ -3,3 +3,33 @@
 @(2,1,1,1,1,2,3) | sort -Descending
 @(2,1,1,1,1,2,3) | sort -Unique
 
+------------------------
+
+
+$a = @(3,1,9,0,6,4,5)
+$a | Sort-Object
+$a | Sort-Object -Descending
+
+
+$b = @('c','y','a')
+$b | Sort-Object -CaseSensitive
+
+
+# sort by column
+$y = yt-dlp -j https://www.youtube.com/watch?v=ioNng23DkIM
+$y.formats | Sort-Object -Property:filesize
+
+
+------------------------
+
+$b.formats | ? vcodec -Match 'avc1' | ? acodec -Match 'mp4a' | Sort-Object -Property:format_note -Descending | Select-Object -First 1
+
+
+
+
+
+
+
+
+
+
