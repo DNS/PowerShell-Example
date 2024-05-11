@@ -3,3 +3,6 @@ $a | Select-Object -Unique	# remove all duplicates
 $a | Get-Unique			# only remove repetition
 
 # must use pipe to use Get-Unique, can't use -InputObject
+
+
+
