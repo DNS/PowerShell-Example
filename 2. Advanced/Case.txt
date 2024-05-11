@@ -1,1 +1,8 @@
 (Get-Culture).TextInfo.ToTitleCase($s)
+
+$s.ToUpper()
+$s.ToLower()
+
+
+
+
