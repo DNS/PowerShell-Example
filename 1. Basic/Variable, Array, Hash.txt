@@ -140,6 +140,39 @@ $arr = @('a') * 10
 # Creating a variable with large initial size
 $arr = @('a') * 10 -join ''
 
+===============================
+
+
+# check variable already defined or not #1
+# check defined or not: $w.remarks[0].description
+if ($w.remarks -eq $null) {
+    Write-Host "Not defined"
+} else {
+    if ($w.remarks[0].description -neq $null) {
+        Write-Host "Defined"
+    }
+}
+
+
+
+# check variable already defined or not #2 (not working on hash member)
+if (Get-Variable -Name 'MyVariable' -ErrorAction SilentlyContinue) {
+    Write-Host "MyVariable is defined."
+} else {
+    Write-Host "MyVariable is not defined."
+}
+
+# # check variable already defined or not #3 (not working on hash member)
+$foo = 123
+Test-Path variable:global:foo
+
+
+
+
+
+
+
+
 
 
 

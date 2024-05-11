@@ -1,0 +1,10 @@
+$a = 'abc'
+$b = 123
+$a.GetType()
+$b.GetType()
+
+
+
+
+
+
