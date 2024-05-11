@@ -1,0 +1,16 @@
+String 
+Int Int16 Int32 Int64 Int128
+UInt UInt16 UInt32 UInt64 UInt128
+BigInt
+Float Double
+
+[Int128]::MaxValue
+[UInt128]::MaxValue
+[Float]::MaxValue
+[Double]::MaxValue
+
+-------------------------------------
+
+$a = [Int] 5.56
+$a
+
