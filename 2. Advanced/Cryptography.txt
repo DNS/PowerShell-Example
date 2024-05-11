@@ -9,3 +9,12 @@ $hash = $hasher.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($ClearString))
 
 $hashString = [System.BitConverter]::ToString($hash)
 $hashString.Replace('-', '')
+
+
+
+
+
+
+
+
+
