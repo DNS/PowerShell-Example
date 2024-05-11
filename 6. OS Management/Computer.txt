@@ -7,3 +7,6 @@ Get-ComputerInfo
 
 Clear-RecycleBin
 
+Get-Uptime
+
+
