@@ -43,10 +43,12 @@ Get-Process | Select-Object ProcessName, CPU
 
 # output first/last 2 lines
 $a = "AAA`nBBB`nCCC`nDDD"
-Set-Content test.txt -Value $a
+Set-Content -Path test.txt -Value $a
 
 Get-Content test.txt | select -First 2
 Get-Content test.txt | select -Last 2
+
+Get-ChildItem * -File | Select-Object -Property Name, FullName
 
 
 
