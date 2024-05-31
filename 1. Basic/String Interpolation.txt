@@ -1,0 +1,7 @@
+
+# String Interpolation #1
+$(...) $(...)
+Write-Output "Value: $( $a / 100 ) $( $b + 500) kilograms"
+
+# String Interpolation #2
+Write-Output ${env:CommonProgramFiles(x86)}
