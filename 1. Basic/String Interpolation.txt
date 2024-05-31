@@ -3,5 +3,11 @@
 $(...) $(...)
 Write-Output "Value: $( $a / 100 ) $( $b + 500) kilograms"
 
+
+
 # String Interpolation #2
 Write-Output ${env:CommonProgramFiles(x86)}
+
+${variable with spaces} = 123
+Write-Output "Value: ${variable with spaces}"
+
