@@ -1,0 +1,2 @@
+Format-Table -AutoSize
+Format-Table -Wrap
