@@ -1,8 +1,14 @@
-Get-ChildItem -Recurse -Include *.txt
+﻿Get-ChildItem -Path 'C:\mypath\' -Recurse -Include *.txt
+Get-ChildItem -Path 'C:\mypath\' -Recurse -Include '*.tar*' -Exclude '*.gz*'
 
-Get-ChildItem -Recurse -Include '*.tar*' -Exclude '*.gz*'
+Get-ChildItem -Path 'C:\mypath\' -Recurse -Filter '*.docx*' 
 
 
-
-
+◉ Difference between -Include and -Filter
+	‣ Filter parameter is implemented by provider. It is efficient because applies when 
+		retrieving the objects. Get-PSprovider commandlet shows providers that implement 
+		'filter' parameter. For example, there are only two providers on my system:ActiveDirectory 
+		and FileSystem
+	‣ Include parameter is implemented by Powershell. It only works in conjunction with Recurse
+		parameter (as MSDN describes here).
 
