@@ -16,11 +16,19 @@ $num1 = 777
 $num2 = 5.867
 $str1 = 'abc'
 $str2 = "xyz"
-$text = @"
-This is (a) sample
-text, this is
-a (sample text)
+
+$text1 = @"
+abc"def
+123'456
 "@
+
+$text2 = @'
+abc"def
+123'456
+'@
+
+$quote1 = "ab`"cd'ef"
+$quote2 = 'ab"cd''ef'
 
 
 Set-Variable -Name $var1 -Value (0x5555)
