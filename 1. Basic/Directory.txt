@@ -1,4 +1,4 @@
-
+﻿
 Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>]
     [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes
     {ReadOnly | Hidden | System | Directory | Archive | Device | Normal | Temporary |
@@ -27,19 +27,21 @@ Remove-Item C:\my\path -Recurse -Force
 del C:\my\path -Recurse -Force
 
 # list all directory content including hidden/system/other types
+Get-ChildItem * -Force
+gci * -Force
 dir * -Force
 
 # list directory content with specific attributes
-dir * -Attributes ReadOnly, Hidden, System, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData
-dir * -Attributes @('ReadOnly', 'Hidden', 'System', 'Directory', 'Archive', 'Device', 'Normal', 'Temporary', 'SparseFile', 'ReparsePoint', 'Compressed', 'Offline', 'NotContentIndexed', 'Encrypted', 'IntegrityStream', 'NoScrubData')
+gci * -Attributes ReadOnly, Hidden, System, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData
+gci * -Attributes @('ReadOnly', 'Hidden', 'System', 'Directory', 'Archive', 'Device', 'Normal', 'Temporary', 'SparseFile', 'ReparsePoint', 'Compressed', 'Offline', 'NotContentIndexed', 'Encrypted', 'IntegrityStream', 'NoScrubData')
 
 
 
 ####################################
 
 # copy multiple file types to destination directory
-dir .\OLD\*.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
-dir .\OLD\* -Include *.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
+Get-ChildItem .\OLD\*.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
+Get-ChildItem .\OLD\* -Include *.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .\NEW\  }
 
 ####################################
 
@@ -47,3 +49,21 @@ dir .\OLD\* -Include *.jpg,*.png -Recurse | %{ Copy-Item -Path $_ -Destination .
 Get-Location
 gl
 pwd
+
+####################################
+
+# Resolves the wildcard characters in a path, and displays the path contents.
+
+Resolve-Path ~
+
+Path
+----
+C:\Users\User01
+
+--------------------------
+
+# get Relative path
+Set-Location C:\Windows
+Resolve-Path -Relative -Path C:\Windows\System32
+
+

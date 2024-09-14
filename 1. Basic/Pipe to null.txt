@@ -1,9 +1,9 @@
-
+﻿
 # standard powershell way
-dir | Out-Null
+Get-ChildItem | Out-Null
 
-# faster speed
-dir > $null
+# faster speed for large output
+Get-ChildItem > $null
 
 
 

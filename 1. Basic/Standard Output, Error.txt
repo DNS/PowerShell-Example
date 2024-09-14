@@ -14,12 +14,12 @@ Write-Output 'لا شيء واقع مطلق بل كل ممكن'
 'Laa shay'a waqi'un mutlaq bale kouloun moumkin.'
 
 @"
-hello 
+hello
 world
 "@
 
 @'
-hello 
+hello
 world
 '@
 
@@ -40,12 +40,13 @@ Write-Host 444 | %{ $_ + 555 }	# doesn't work !!!
 # STDERR
 Write Error 'This is error' -ErrorVariable var 2> $null
 [Console]::Error.Write('This is error')
+[Console]::Error.WriteLine('This is error')
 
 $Host.UI.WriteErrorLine("My custom error")
 
 throw "Demo error message"
 
-# 
+#
 Write-Warning "hello"
 Write-Error "hello"
 Write-Output "hello"

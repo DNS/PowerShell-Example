@@ -1,10 +1,11 @@
-Get-ChildItem | Select-String 'MySearchString'
+﻿Get-ChildItem | Select-String 'MySearchString'
 
-Get-ChildItem -Recurse -File | Select-String 'MySearchString' | select Path
+Get-ChildItem -Recurse -File | Select-String 'MySearchString' | Select-Object Path
 
-Get-ChildItem -Recurse -File | Select-String 'MySearchString' -list | select Path
+Get-ChildItem -Recurse -File | Select-String 'MySearchString' -List | Select-Object Path
 
-
+Get-ChildItem -Recurse -File | Select-String 'MySearchString' | % Path
+Get-ChildItem -Recurse -File | Select-String 'MySearchString' | % Filename
 
 
 
