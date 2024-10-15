@@ -1,0 +1,14 @@
+﻿
+Get-Process | % ProcessName
+
+Get-Process | %{ $_.ProcessName }
+
+$(Get-Process).ProcessName
+
+Get-Process | Select-Object -Property ProcessName -ExpandProperty ProcessName
+
+$(Get-Process | Select-Object ProcessName).ProcessName
+
+# empty blank heading still shown
+Get-Process | select ProcessName | Format-Table -HideTableHeaders
+

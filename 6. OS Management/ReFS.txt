@@ -1,0 +1,18 @@
+﻿If you want to use mirror/RAID:
+- Enable mirror/RAID-1 trough "Storage Spaces" in Control Panel.
+- Don't use mirror/RAID-1 from "diskpart" or "Disk Management", it will not repair corrupted data.
+
+Dynamic disks have been deprecated from Windows and are no longer recommended. Instead, use basic disks or the newer Storage Spaces technology when you want to pool disks together into larger volumes. If you want to mirror the volume from which Windows boots, you might want to use a hardware RAID controller, such as the one included on many motherboards.
+
+Storage Spaces do not mirror whole drives in the first place – they allocate and mirror individual data slabs, more like Btrfs than RAID. You could have a few slabs mirrored between D1/D3, some between D2/D3, some between D1/D4, and so on.
+
+The allocation is distributed proportionally according to disk sizes. (slabs are sized somewhere in the range of 256 MB or possibly 1 GB.)
+
+
+--------------------------------
+
+
+Get-Get-ChildItem D:\ -File -Recurse | Get-FileIntegrity
+Get-Get-ChildItem D:\ -File -Recurse | Set-FileIntegrity -Enable $True
+
+# you can't trigger scrub, it's done automatically by windows service
