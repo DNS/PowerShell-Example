@@ -1,4 +1,4 @@
-Invoke-WebRequest   	IWR
+﻿Invoke-WebRequest   	IWR
 Invoke-RestMethod       IRM
 
 
@@ -14,38 +14,41 @@ Invoke-WebRequest       IWR
 	Links
 	RawContentLength
 	RelationLink
-	
+
 # Invoke-RestMethod
-Use Invoke-RestMethod to fetch xml or json and automatically parse it into 
+Use Invoke-RestMethod to fetch xml or json and automatically parse it into
 hash table.
 
 
 # Show all links in tag <a href="" />
-(Invoke-WebRequest 'http://website123.com/').Links.href
+(Invoke-WebRequest 'http://example.com/').Links.href
 
 
 # Cookies
-$result = Invoke-WebRequest -Uri 'https://someSite.com' -SessionVariable ss
+$result = Invoke-WebRequest -Uri 'http://example.com/' -SessionVariable ss
 $LoginForm = $result.Forms[0]
 $LoginForm.Fields["user"] = "username"
 $LoginForm.Fields["password"] = "password"
 $result = Invoke-WebRequest -Uri $LoginForm.Action -WebSession $ss -Method Post
 
 # Post method
-$a = Invoke-WebRequest -Uri 'http://localhots/test.cgi' -Method Post -ContentType 'application/json' -Body @{ 'param1'='value1'; 'param2'='value2'; }
+$a = Invoke-WebRequest -Uri 'http://example.com/test.cgi' -Method Post -ContentType 'application/json' -Body @{ 'param1'='value1'; 'param2'='value2'; }
 
 
 Note the lack of $ on session - that command creates a variable with the given name. After that command, you have a $ss variable, which you can then pass as the -WebSession in all subsequent requests.
 
 # Socks5 Proxy
-$result = Invoke-WebRequest -Uri https://someSite.com/ -Proxy "socks5://127.0.0.1:8000"
+$result = Invoke-WebRequest -Uri 'http://example.com/' -Proxy "socks5://127.0.0.1:8000"
 
 # User Agent
-Invoke-WebRequest -Uri https://someSite.com/ -UserAgent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0'
+Invoke-WebRequest -Uri 'http://example.com/' -UserAgent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0'
 
 # set HTTP Referer
-Invoke-WebRequest -Uri https://someSite.com/ -Headers @{'Referer'= 'http://mywebsite/origin.html'}
+Invoke-WebRequest -Uri 'http://example.com/' -Headers @{'Referer'= 'http://example.com/origin.html'}
 
+# Get "Key only" from Invoke-RestMethod
+$r = Invoke-RestMethod -Uri "https://hypestat.com/api/E9asC1KOutzPrlALHn34X/example.com"
+($r.data | Get-Member -MemberType Properties).Name
 
 
 

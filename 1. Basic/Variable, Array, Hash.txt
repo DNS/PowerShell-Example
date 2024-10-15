@@ -1,4 +1,4 @@
-# accessing "global/local/private" variable
+﻿# accessing "global/local/private" variable
 
 $local:DemoVar = "hello"
 $DemoVar = "hello"
@@ -175,6 +175,16 @@ $foo = 123
 Test-Path variable:global:foo
 
 
+
+# reverse array
+$a = 4, 8, 7, 1, 3
+[array]::Reverse($a)
+
+# sort array
+$a = 4, 8, 7, 1, 3
+$a | Sort-Object
+$a | Sort-Object -Descending
+$a | Sort-Object -Unique
 
 
 

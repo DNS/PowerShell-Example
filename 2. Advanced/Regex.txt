@@ -1,4 +1,4 @@
-
+﻿
 -Match		# case insensitive
 -IMatch		# case insensitive
 -CMatch		# case sensitive
@@ -18,8 +18,8 @@ $s.Replace('text', 'pattern', 'OrdinalIgnoreCase')
 $string -match 'pattern'
 $Matches
 
-string -match ... and collection -match ... are two different operators. 
-The first gets a Boolean value and fills $matches. The second gets each 
+string -match ... and collection -match ... are two different operators.
+The first gets a Boolean value and fills $matches. The second gets each
 collection item that matches a pattern and apparently does not fill $matches.
 
 # Capture match value #2
@@ -35,13 +35,19 @@ PowerShell's -Match only returns first match. You have to use Select-String with
 
 -------------------
 
-# .NET
+# .NET Regex
+
+$m = [regex]::Matches('abc123deabc456de', 'b(c.+?)d')
+
 $m = [regex]::Match($text, $pattern)
 $m = [regex]::Matches($text, $pattern)
 $m = [regex]::Replace($text, $pattern, $replacement)
+
 $m.Groups
 $m.Value
-$m.Groups[1].Captures[0]
+
+$m | %{ $_.Groups[1].Value }
+
 
 
 

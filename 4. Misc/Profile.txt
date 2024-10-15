@@ -1,4 +1,4 @@
-Profile types and locations
+﻿Profile types and locations
 
 PowerShell supports several profile files that are scoped to users and PowerShell hosts. You can have any or all of these profiles on your computer.
 For example, the PowerShell console supports the following basic profile files. The profiles are listed in order that they're executed.
@@ -29,15 +29,17 @@ For example, the PowerShell console supports the following basic profile files. 
         macOS - ~/.config/powershell/Microsoft.PowerShell_profile.ps1
 
 
+New-Item ~/.config/powershell -Type Directory
+Write-Output "`$env:PATH += ':/root/bin/'`nSet-Location /www/`n" | Out-File ~/.config/powershell/profile.ps1
 ---------------------------
 
 # Windows: to open specific directory everytime pwsh launched
 [EDIT] "$HOME\Documents\PowerShell\Profile.ps1"
-cd C:\mypath
+Set-Location C:\mypath
 
 # Linux #1 (current user, pwsh only)
 [EDIT] ~/.config/powershell/profile.ps1
-cd C:\mypath
+Set-Location C:\mypath
 
 # Linux #2 (current user, all hosts)
 [EDIT] ~/.profile
@@ -50,6 +52,5 @@ export PATH="/www:$PATH"
 $env:Path += ';C:\mypath'
 
 # Linux
-$env:PATH += ':/www'
-
+$env:PATH += ':/root/bin/'
 

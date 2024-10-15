@@ -1,2 +1,3 @@
-pwsh.exe /?
+﻿pwsh.exe /?
+pwsh.exe /h
 pwsh.exe -h

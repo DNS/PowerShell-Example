@@ -1,2 +1,4 @@
-Format-Table -AutoSize
+﻿Format-Table -AutoSize
 Format-Table -Wrap
+
+Format-List
