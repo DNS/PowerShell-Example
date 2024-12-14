@@ -1,8 +1,8 @@
-; convert character to integer
+# convert character to integer
 [byte][char] 'a'
 
 
-; print all ascii characters
+# print all ascii characters
 foreach ($i in 0..255) {
     Write-Host "$i`: $([char] $i)"
 }
