@@ -1,4 +1,4 @@
-
+﻿
 # case insensitive
 -and
 -or
@@ -46,6 +46,8 @@
 >, >>, 2>, 2>>, and 2>&1
 
 Subexpression operator $( )
+
+Group operator {  }
 
 Array subexpression operator @( )
 Array Comma operator ,
