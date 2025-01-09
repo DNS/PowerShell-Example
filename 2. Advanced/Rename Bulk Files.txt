@@ -1,0 +1,6 @@
+﻿# test first
+Get-ChildItem -Path "C:\Your\Directory" -File | Rename-Item -NewName {"aaa-" + $_.Name} -WhatIf
+
+# rename
+Get-ChildItem -Path "C:\Your\Directory" -File | Rename-Item -NewName {"aaa-" + $_.Name}
+
