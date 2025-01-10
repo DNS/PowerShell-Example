@@ -1,3 +1,3 @@
 ﻿# Invoke-Item
 Invoke-Item 'D:\path\filename.jpg'
-gci D:\path\ -File -Recurse | ? Name -match 'filename' | Invoke-Item
+Get-ChildItem D:\path\ -File -Recurse | ? Name -match 'filename' | Invoke-Item
